@@ -2,9 +2,7 @@
 
 Prerequisites
 
-python/python3
-pip/pip3
-django
+python/python3,	 pip/pip3, 	django
 
 
 Guide to Install and Run program
@@ -42,9 +40,6 @@ $ python3 manage.py runserver
 
 ## Codebase structure
 
-The project is coded using a simple and intuitive structure presented below:
-
-```bash
 < PROJECT ROOT >
    |
    |-- core/                            
