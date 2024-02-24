@@ -1,11 +1,15 @@
-4990 Project
+# 4990 Project
 
-Prerequisites
+# Prerequisites
 
-python/python3,	 pip/pip3, 	django
+1. python/python3
+
+2. pip/pip3
+
+3. django
 
 
-Guide to Install and Run program
+# Guide to Install and Run program
 
 1. $ git clone https://github.com/reenharnoorsingh/4990-project.git
 
@@ -24,7 +28,7 @@ To install virtual environment you can use pip (pip3 install virtualenv)
 
 5. $ pip3 install -r requirements.txt
 
-# setting up database
+# Setting up database
 
 6. $ python3 manage.py makemigrations (when you change the database)
 
@@ -40,6 +44,9 @@ $ python3 manage.py runserver
 
 ## Codebase structure
 
+The project is coded using a simple and intuitive structure presented below:
+
+```
 < PROJECT ROOT >
    |
    |-- core/                            
