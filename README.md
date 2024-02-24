@@ -11,32 +11,32 @@
 
 # Guide to Install and Run program
 
-1. $ git clone https://github.com/reenharnoorsingh/4990-project.git
+$ git clone https://github.com/reenharnoorsingh/4990-project.git
 
-2. $ cd 4990-Project
+$ cd 4990-Project
 
 # Creating virtual environment
 To install virtual environment you can use pip (pip3 install virtualenv)
 
-3. $ virtualenv env
-3. $ python3 -m venv env ( For Windows )
+$ virtualenv env
+$ python3 -m venv env ( For Windows )
 
-4. $ source env/bin/activate
-4. $ .\env\Scripts\activate ( For Windows )
+$ source env/bin/activate
+$ .\env\Scripts\activate ( For Windows )
 
 # Downloading all the requirements
 
-5. $ pip3 install -r requirements.txt
+$ pip3 install -r requirements.txt
 
 # Setting up database
 
-6. $ python3 manage.py makemigrations (when you change the database)
+$ python3 manage.py makemigrations (when you change the database)
 
-7. $ python3 manage.py migrate
+$ python3 manage.py migrate
 
 # Create the Superuser
 
-8. $ python3 manage.py createsuperuser
+$ python3 manage.py createsuperuser
 
 # Start the app
 
@@ -44,7 +44,6 @@ $ python3 manage.py runserver
 
 ## Codebase structure
 
-The project is coded using a simple and intuitive structure presented below:
 
 ```
 < PROJECT ROOT >
