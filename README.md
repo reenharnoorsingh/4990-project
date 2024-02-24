@@ -18,11 +18,11 @@ $ cd 4990-Project
 # Creating virtual environment
 To install virtual environment you can use pip (pip3 install virtualenv)
 
-$ virtualenv env
-$ python3 -m venv env ( For Windows )
+1. $ virtualenv env
+1. $ python3 -m venv env ( For Windows )
 
-$ source env/bin/activate
-$ .\env\Scripts\activate ( For Windows )
+2.  source env/bin/activate
+2.  .\env\Scripts\activate ( For Windows )
 
 # Downloading all the requirements
 
