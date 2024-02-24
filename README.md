@@ -11,7 +11,7 @@ Guide to Install and Run program
 
 1. $ git clone https://github.com/reenharnoorsingh/4990-project.git
 
-2. $ cd 4990_Project
+2. $ cd 4990-Project
 
 # Creating virtual environment
 To install virtual environment you can use pip (pip3 install virtualenv)
