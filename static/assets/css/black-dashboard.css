@@ -74,6 +74,15 @@ body {
   background-color: #1e1e2f;
 }
 
+.content {
+  display:flex;
+  flex-direction: column;
+  margin-right:15rem;
+
+}
+
+
+
 [tabindex="-1"]:focus {
   outline: 0 !important;
 }
@@ -17784,7 +17793,8 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .main-panel {
-  position: relative;
+  margin-left:auto;
+  margin-right:auto;
   float: right;
   width: 100%;
   min-height: 100vh;

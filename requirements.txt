@@ -12,3 +12,8 @@ gunicorn==21.2.0
 # DB Layer
 # psycopg2-binary
 # mysqlclient
+
+yfinance~=0.2.37
+requests~=2.31.0
+pandas~=2.2.1
+numpy~=1.26.4
