@@ -1,8 +1,9 @@
 from django.urls import path
 
 from . import views
-from .views import stock_dropdown
+from .views import get_stock_names
+
 urlpatterns = [
     path('', views.index, name='index'),
-    path('stock_dropdown/', views.stock_dropdown, name='stock_dropdown'),
+    path('get_stock_names/', get_stock_names, name='get_stock_names'),
 ]

@@ -1,57 +1,28 @@
 from django.shortcuts import render
 import yfinance as yf
-from django.http import HttpResponseServerError
-from django.http import HttpResponse
+from django.http import JsonResponse
 
-# Create your views here.
 
 def index(request):
-
-    # Page from the theme 
+    # Page from the theme
     return render(request, 'pages/dashboard.html')
 
 
-import yfinance as yf
-from django.shortcuts import render
-from django.http import HttpResponseServerError
 
-def stock_dropdown(request):
-    if request.method == 'POST':
-        # If the form is submitted, retrieve the selected stock symbol
-        selected_stock = request.POST.get('stock1')
-        try:
-            # Fetch available stock options using yfinance
-            stock_options = yf.Tickers().tickers
+def get_stock_names(request):
+    # List of tickers for demonstration
+    tickers = ['AAPL', 'MSFT', 'GOOGL']  # You can replace this with your desired list of tickers
 
-            # Extract the symbols from the stock options
-            symbols = [stock_info.info['symbol'] for stock_info in stock_options]
+    # Instantiate the Tickers class with the list of tickers
+    all_tickers = yf.Tickers(tickers)
 
-            # Pass the symbols to the template
-            return render(request, 'pages/dashboard.html', {'symbols': symbols, 'selected_stock': selected_stock})
-        except yf.YFinanceError as yf_error:
-            # Handle yfinance specific errors
-            error_message = f"YFinanceError: {yf_error}"
-            return render(request, 'error.html', {'error_message': error_message})
-        except Exception as e:
-            # Handle other unexpected errors gracefully
-            error_message = f"An error occurred while fetching stock options: {str(e)}"
-            return render(request, 'error.html', {'error_message': error_message})
-    else:
-        # If the request method is not POST, render the form with available stock options
-        try:
-            # Fetch available stock options using yfinance
-            stock_options = yf.Tickers().tickers
+    # Initialize list to store stock names
+    stock_names = []
 
-            # Extract the symbols from the stock options
-            symbols = [stock_info.info['symbol'] for stock_info in stock_options]
+    # Fetch stock names for each ticker
+    for ticker in all_tickers.tickers:
+        ticker_obj = yf.Ticker(ticker)
+        if 'shortName' in ticker_obj.info:
+            stock_names.append(ticker_obj.info['shortName'])
 
-            # Pass the symbols to the template
-            return render(request, 'pages/dashboard.html', {'symbols': symbols})
-        except yf.YFinanceError as yf_error:
-            # Handle yfinance specific errors
-            error_message = f"YFinanceError: {yf_error}"
-            return render(request, 'error.html', {'error_message': error_message})
-        except Exception as e:
-            # Handle other unexpected errors gracefully
-            error_message = f"An error occurred while fetching stock options: {str(e)}"
-            return render(request, 'error.html', {'error_message': error_message})
+    return JsonResponse({'stock_names': stock_names})

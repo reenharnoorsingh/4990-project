@@ -1,6 +1,35 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block content %}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+    function fetchAndPopulateDropdown(formId, dropdownId) {
+        // Fetch stock names using Axios
+        axios.get("{% url 'get_stock_names' %}")
+        .then(function (response) {
+            var stockNames = response.data.stock_names;
+            var selectElement = document.getElementById(dropdownId);
+
+            // Clear existing options
+            selectElement.innerHTML = '';
+
+            // Populate dropdown with fetched stock names
+            stockNames.forEach(function(stockName) {
+                var option = document.createElement('option');
+                option.value = stockName;
+                option.textContent = stockName;
+                selectElement.appendChild(option);
+            });
+        })
+        .catch(function (error) {
+            console.error('Error fetching stock names:', error);
+        });
+    }
+
+    // Call the function for each form
+    fetchAndPopulateDropdown('stockForm1', 'stock1');
+    fetchAndPopulateDropdown('stockForm2', 'stock2');
+</script>
 <div class="content">
     <div class="row">
         <div class="col-6">
@@ -9,17 +38,19 @@
                     <h4>Stock 1</h4>
                 </div>
                 <div class="card-body">
-                    <form id="stockForm1" method="post" action="{% url 'stock_dropdown' %}">
-                            {% csrf_token %}
-                    <label for="stock1">Choose a stock for Stock 1:</label>
-                            <!-- Create the dropdown menu for Stock 1 -->
-                        <select id="stock1" name="stock1">
-                              {% for symbol in symbols %}
-                            <option value="{{ symbol }}">{{ symbol }}</option>
-                             {% endfor %}
-                         </select>
-                    <input type="submit" value="Submit">
-                    </form>
+                    <form id="stockForm1" method="post">
+    {% csrf_token %}
+    <label for="stock1">Choose a stock for Stock 1:</label>
+    <!-- Create the dropdown menu for Stock 1 -->
+    <select id="stock1" name="stock1">
+        {% for symbol in symbols %}
+            <option value="{{ symbol }}">{{ symbol }}</option>
+        {% endfor %}
+    </select>
+    <!-- Remove action attribute from the form -->
+    <input type="submit" value="Submit">
+</form>
+
                     <div><h4>Replace with stock graph</h4></div>
                     <canvas id="chartBig1"></canvas>
                 </div>
@@ -31,17 +62,19 @@
                     <h4>Stock 2</h4>
                 </div>
                 <div class="card-body">
-                    <form id="stockForm2">
+                    <form id="stockForm2" method="post">
+                        {% csrf_token %}
                         <label for="stock2">Choose a stock for Stock 2:</label>
                         <!-- Create the dropdown menu for Stock 2 -->
                         <select id="stock2" name="stock2">
-                            <!-- Populate the options using Django template syntax -->
                             {% for symbol in symbols %}
-                                <option value="{{ symbol }}">{{ symbol }}</option>
+                            <option value="{{ symbol }}">{{ symbol }}</option>
                             {% endfor %}
                         </select>
+                        <!-- Remove action attribute from the form -->
                         <input type="submit" value="Submit">
                     </form>
+
                     <div><h4>Replace with stock graph</h4></div>
                     <canvas id="chartBig2"></canvas>
                 </div>
