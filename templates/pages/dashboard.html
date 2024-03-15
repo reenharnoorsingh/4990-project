@@ -1,55 +1,71 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block content %}
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
-    function fetchAndPopulateDropdown(formId, dropdownId) {
-        // Fetch stock names using Axios
-        axios.get("{% url 'get_stock_names' %}")
-        .then(function (response) {
-            var stockNames = response.data.stock_names;
-            var selectElement = document.getElementById(dropdownId);
+    $(document).ready(function() {
+        $.ajax({
+            url: "{% url 'get_stock_names' %}",
+            method: "GET",
+            dataType: "json",
+            success: function(response) {
+                if (response && response.tickers) { // Ensure the key matches the response data
+                    // Populate dropdown menu for Stock 1
+                    var stockDropdown1 = $('#stock1');
+                    stockDropdown1.empty(); // Clear existing options
 
-            // Clear existing options
-            selectElement.innerHTML = '';
+                    // Populate dropdown menu for Stock 2
+                    var stockDropdown2 = $('#stock2');
+                    stockDropdown2.empty(); // Clear existing options
 
-            // Populate dropdown with fetched stock names
-            stockNames.forEach(function(stockName) {
-                var option = document.createElement('option');
-                option.value = stockName;
-                option.textContent = stockName;
-                selectElement.appendChild(option);
-            });
-        })
-        .catch(function (error) {
-            console.error('Error fetching stock names:', error);
+                    // Loop through tickers to populate both dropdowns
+                    $.each(response.tickers, function(index, ticker) {
+                        stockDropdown1.append($('<option></option>').attr('value', ticker).text(ticker));
+                        stockDropdown2.append($('<option></option>').attr('value', ticker).text(ticker));
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error("Error fetching stock names:", error);
+            }
         });
-    }
 
-    // Call the function for each form
-    fetchAndPopulateDropdown('stockForm1', 'stock1');
-    fetchAndPopulateDropdown('stockForm2', 'stock2');
+        // Intercept form submission for both forms
+        $('#stockForm1, #stockForm2').on('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Get the selected stock value
+            var selectedStock = $(this).find('select').val();
+            console.log('Selected stock:', selectedStock);
+
+            // Perform any further processing or AJAX request here
+            // For now, let's just print the selected stock to the console
+        });
+    });
 </script>
+
+
+
+
+
 <div class="content">
     <div class="row">
         <div class="col-6">
             <div class="card card-chart">
-                <div class="card-header ">
+                <div class="card-header">
                     <h4>Stock 1</h4>
                 </div>
                 <div class="card-body">
-                    <form id="stockForm1" method="post">
-    {% csrf_token %}
-    <label for="stock1">Choose a stock for Stock 1:</label>
-    <!-- Create the dropdown menu for Stock 1 -->
-    <select id="stock1" name="stock1">
-        {% for symbol in symbols %}
-            <option value="{{ symbol }}">{{ symbol }}</option>
-        {% endfor %}
-    </select>
-    <!-- Remove action attribute from the form -->
-    <input type="submit" value="Submit">
-</form>
+                    <form id="stockForm1" method="post" action="{% url 'submit_stock_form' %}">
+                        {% csrf_token %}
+                        <label for="stock1">Choose a stock for Stock 1:</label>
+                        <!-- Create the dropdown menu for Stock 1 -->
+                        <select id="stock1" name="stock1"></select>
+                        <!-- Remove action attribute from the form -->
+                        <input type="submit" value="Submit">
+                    </form>
+
 
                     <div><h4>Replace with stock graph</h4></div>
                     <canvas id="chartBig1"></canvas>
@@ -62,15 +78,16 @@
                     <h4>Stock 2</h4>
                 </div>
                 <div class="card-body">
-                    <form id="stockForm2" method="post">
+                    <form id="stockForm2" method="post" action="{% url 'submit_stock_form' %}">
                         {% csrf_token %}
                         <label for="stock2">Choose a stock for Stock 2:</label>
                         <!-- Create the dropdown menu for Stock 2 -->
                         <select id="stock2" name="stock2">
-                            {% for symbol in symbols %}
-                            <option value="{{ symbol }}">{{ symbol }}</option>
-                            {% endfor %}
-                        </select>
+    {% for ticker in tickers %}
+        <option value="{{ ticker }}">{{ ticker }}</option>
+    {% endfor %}
+</select>
+
                         <!-- Remove action attribute from the form -->
                         <input type="submit" value="Submit">
                     </form>

@@ -194,4 +194,5 @@ plt.title(f'Bollinger Bands Analysis - {tickerSymbol2}')
 plt.legend()
 
 plt.tight_layout()
+
 plt.show()
