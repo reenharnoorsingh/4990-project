@@ -38,25 +38,7 @@ def get_stock_names(request):
     # Return JSON response with tickers
     return JsonResponse({'tickers': tickers})
 
-def print_tickers():
-    # Get the base directory of the project
-    base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-    # Construct the file path to the CSV file
-    csv_file_path = os.path.join(base_dir, 'tsx_tickers.csv')
-
-    try:
-        # Open the CSV file and read its content
-        with open(csv_file_path, 'r') as file:
-            reader = csv.reader(file)
-            tickers = [row[0] for row in reader]
-
-        # Print the tickers to the console
-        print("Tickers:", tickers)
-    except FileNotFoundError:
-        print(f"Error: The file '{csv_file_path}' does not exist.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
 def stock_chart(request):
     symbol = 'AAPL'  # Example symbol, you can change it as per your requirement
     data = yf.download(symbol, start='2023-01-01', end='2023-12-31')
@@ -66,15 +48,18 @@ def stock_chart(request):
 
 
 def submit_stock_form(request):
+    print("submit_stock_form function called.")  # Debug statement to verify function call
+
     if request.method == 'POST':
         selected_stock1 = request.POST.get('stock1')
         selected_stock2 = request.POST.get('stock2')
 
-        print("Selected Stock 1:", selected_stock1)
-        print("Selected Stock 2:", selected_stock2)
+        print("Selected Stock 1:", selected_stock1)  # Debug statement to print selected stock 1
+        print("Selected Stock 2:", selected_stock2)  # Debug statement to print selected stock 2
 
         # You can perform further processing here
 
     return HttpResponse("Stock values printed to console")  # Placeholder response
+
 
 

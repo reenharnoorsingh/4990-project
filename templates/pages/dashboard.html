@@ -32,16 +32,26 @@
         });
 
         // Intercept form submission for both forms
-        $('#stockForm1, #stockForm2').on('submit', function(e) {
-            e.preventDefault(); // Prevent default form submission
+        $('#stockForm1').on('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
 
-            // Get the selected stock value
-            var selectedStock = $(this).find('select').val();
-            console.log('Selected stock:', selectedStock);
+        // Get the selected stock value for Stock 1
+        var selectedStock1 = $(this).find('select').val();
+        console.log('Selected stock for Stock 1:', selectedStock1);
 
-            // Perform any further processing or AJAX request here
-            // For now, let's just print the selected stock to the console
-        });
+        // Perform any further processing or AJAX request here
+        // For now, let's just print the selected stock to the console
+    });
+        $('#stockForm2').on('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Get the selected stock value for Stock 2
+        var selectedStock2 = $(this).find('select').val();
+        console.log('Selected stock for Stock 2:', selectedStock2);
+
+        // Perform any further processing or AJAX request here
+        // For now, let's just print the selected stock to the console
+    });
     });
 </script>
 
