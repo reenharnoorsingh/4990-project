@@ -1,57 +1,54 @@
 from django.shortcuts import render
 import yfinance as yf
-from django.http import HttpResponseServerError
+from django.http import HttpResponseServerError, HttpResponseRedirect
 from django.http import HttpResponse
+import pandas as pd
+
 
 # Create your views here.
 
 def index(request):
+    if request.method == 'POST' and 'get_started' in request.POST:
+        request.session['get_started_clicked'] = True
+        return HttpResponseRedirect(request.path)  # Redirect to the same page to refresh content
 
-    # Page from the theme 
     return render(request, 'pages/dashboard.html')
 
 
-import yfinance as yf
-from django.shortcuts import render
-from django.http import HttpResponseServerError
+def stock_dropdown1(request):
+    # Read the CSV file into a DataFrame
+    df = pd.read_csv('tsx_tickers.csv')
 
-def stock_dropdown(request):
-    if request.method == 'POST':
-        # If the form is submitted, retrieve the selected stock symbol
-        selected_stock = request.POST.get('stock1')
-        try:
-            # Fetch available stock options using yfinance
-            stock_options = yf.Tickers().tickers
+    # Convert DataFrame columns to lists
+    tickers = df['Ticker'].tolist()
+    names = df['Name'].tolist()
 
-            # Extract the symbols from the stock options
-            symbols = [stock_info.info['symbol'] for stock_info in stock_options]
+    # Zip tickers and names into a list of tuples
+    tickers_with_names = zip(tickers, names)
 
-            # Pass the symbols to the template
-            return render(request, 'pages/dashboard.html', {'symbols': symbols, 'selected_stock': selected_stock})
-        except yf.YFinanceError as yf_error:
-            # Handle yfinance specific errors
-            error_message = f"YFinanceError: {yf_error}"
-            return render(request, 'error.html', {'error_message': error_message})
-        except Exception as e:
-            # Handle other unexpected errors gracefully
-            error_message = f"An error occurred while fetching stock options: {str(e)}"
-            return render(request, 'error.html', {'error_message': error_message})
-    else:
-        # If the request method is not POST, render the form with available stock options
-        try:
-            # Fetch available stock options using yfinance
-            stock_options = yf.Tickers().tickers
+    # Pass the tickers_with_names to your template context
+    context = {
+        'tickers': tickers_with_names
+    }
 
-            # Extract the symbols from the stock options
-            symbols = [stock_info.info['symbol'] for stock_info in stock_options]
+    # Return only the dropdown menu portion of the page
+    return render(request, 'includes/stock_dropdown.html', context)
 
-            # Pass the symbols to the template
-            return render(request, 'pages/dashboard.html', {'symbols': symbols})
-        except yf.YFinanceError as yf_error:
-            # Handle yfinance specific errors
-            error_message = f"YFinanceError: {yf_error}"
-            return render(request, 'error.html', {'error_message': error_message})
-        except Exception as e:
-            # Handle other unexpected errors gracefully
-            error_message = f"An error occurred while fetching stock options: {str(e)}"
-            return render(request, 'error.html', {'error_message': error_message})
+def stock_dropdown2(request):
+    # Read the CSV file into a DataFrame
+    df = pd.read_csv('tsx_tickers.csv')
+
+    # Convert DataFrame columns to lists
+    tickers = df['Ticker'].tolist()
+    names = df['Name'].tolist()
+
+    # Zip tickers and names into a list of tuples
+    tickers_with_names = zip(tickers, names)
+
+    # Pass the tickers_with_names to your template context
+    context = {
+        'tickers': tickers_with_names
+    }
+
+    # Return only the dropdown menu portion of the page
+    return render(request, 'includes/stock_dropdown.html', context)

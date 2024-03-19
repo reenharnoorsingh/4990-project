@@ -1,7 +1,17 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block content %}
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("getStartedBtn").addEventListener("click", function() {
+            console.log("Button clicked!"); // Log message to console
+            document.getElementById("mainContent").style.display = "block"; // Show the main content
+            document.getElementById("getStartedBtn").style.display = "none"; // Hide the "Get Started" button
+        });
+    });
+</script>
 <div class="content">
+    <div id="mainContent" style="display: none;">
     <div class="row">
         <div class="col-6">
             <div class="card card-chart">
@@ -9,17 +19,7 @@
                     <h4>Stock 1</h4>
                 </div>
                 <div class="card-body">
-                    <form id="stockForm1" method="post" action="{% url 'stock_dropdown' %}">
-                            {% csrf_token %}
-                    <label for="stock1">Choose a stock for Stock 1:</label>
-                            <!-- Create the dropdown menu for Stock 1 -->
-                        <select id="stock1" name="stock1">
-                              {% for symbol in symbols %}
-                            <option value="{{ symbol }}">{{ symbol }}</option>
-                             {% endfor %}
-                         </select>
-                    <input type="submit" value="Submit">
-                    </form>
+                    {% include 'includes/stock_dropdown.html' %}
                     <div><h4>Replace with stock graph</h4></div>
                     <canvas id="chartBig1"></canvas>
                 </div>
@@ -31,23 +31,13 @@
                     <h4>Stock 2</h4>
                 </div>
                 <div class="card-body">
-                    <form id="stockForm2">
-                        <label for="stock2">Choose a stock for Stock 2:</label>
-                        <!-- Create the dropdown menu for Stock 2 -->
-                        <select id="stock2" name="stock2">
-                            <!-- Populate the options using Django template syntax -->
-                            {% for symbol in symbols %}
-                                <option value="{{ symbol }}">{{ symbol }}</option>
-                            {% endfor %}
-                        </select>
-                        <input type="submit" value="Submit">
-                    </form>
+                    {% include 'includes/stock_dropdown.html' %}
                     <div><h4>Replace with stock graph</h4></div>
                     <canvas id="chartBig2"></canvas>
                 </div>
             </div>
         </div>
-           <div class="col-6">
+        <div class="col-6">
             <div class="card card-chart">
                 <div class="card-header ">
                 </div>
@@ -64,7 +54,7 @@
                 <div class="card-body">
                     <div><h4>Graph here</h4></div>
                 </div>
-                 <p>Description of graph</p>
+                <p>Description of graph</p>
             </div>
         </div>
         <div class="col-6">
@@ -74,7 +64,7 @@
                 <div class="card-body">
                     <div><h4>Graph here</h4></div>
                 </div>
-                 <p>Description of graph</p>
+                <p>Description of graph</p>
             </div>
         </div>
         <div class="col-6">
@@ -84,7 +74,7 @@
                 <div class="card-body">
                     <div><h4>Graph here</h4></div>
                 </div>
-                 <p>Description of graph</p>
+                <p>Description of graph</p>
             </div>
         </div>
         <div class="col-6">
@@ -94,7 +84,7 @@
                 <div class="card-body">
                     <div><h4>Graph here</h4></div>
                 </div>
-                 <p>Description of graph</p>
+                <p>Description of graph</p>
             </div>
         </div>
         <div class="col-6">
@@ -104,11 +94,11 @@
                 <div class="card-body">
                     <div><h4>Graph here</h4></div>
                 </div>
-                 <p>Description of graph</p>
+                <p>Description of graph</p>
             </div>
-
+        </div>
         </div>
     </div>
-
+        <button id="getStartedBtn">Get Started</button> <!-- Button to show the content -->
 </div>
 {% endblock content %}

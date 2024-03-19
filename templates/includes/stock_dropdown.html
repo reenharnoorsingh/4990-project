@@ -1,0 +1,8 @@
+<!-- stock_dropdown.html -->
+<label for="stock">Choose a stock:</label>
+<select id="stock" name="stock">
+    {% for ticker, name in tickers %}
+    <option value="{{ ticker }}">{{ name }}</option>
+    {% endfor %}
+</select>
+<input type="submit" value="Submit">
