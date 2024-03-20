@@ -7,12 +7,55 @@ import pandas as pd
 
 # Create your views here.
 
-def index(request):
-    if request.method == 'POST' and 'get_started' in request.POST:
-        request.session['get_started_clicked'] = True
-        return HttpResponseRedirect(request.path)  # Redirect to the same page to refresh content
+# def index(request):
+#     if request.method == 'POST' and 'get_started' in request.POST:
+#         request.session['get_started_clicked'] = True
+#         return HttpResponseRedirect(request.path)  # Redirect to the same page to refresh content
 
-    return render(request, 'pages/dashboard.html')
+#     return render(request, 'pages/dashboard.html')
+
+
+def index(request):
+    # Read the CSV file into a DataFrame
+    df = pd.read_csv('tsx_tickers.csv')
+
+    tickers_data = df.set_index('Ticker')['Name'].to_dict()
+
+    # Convert DataFrame columns to lists
+    tickers = df['Ticker'].tolist()
+    names = df['Name'].tolist()
+
+    # Zip tickers and names into a list of tuples
+    tickers_with_names = zip(tickers, names)
+
+    # Pass the tickers_with_names to your template context
+    context = {
+        'tickers': tickers_with_names, 
+        # 'tickers2': tickers,
+        # 'names': names,
+        'tickers_data': tickers_data
+        
+    }
+
+    # Return only the dropdown menu portion of the page
+    return render(request, 'pages/dashboard.html', context)
+
+def stock_display(request):
+    
+    stock1 = request.GET.get('stock1')
+    stock2 = request.GET.get('stock2')
+
+    #add Python locgic here for graph data
+
+
+    #add graph data into context  
+    context = {
+        'stock1': stock1,
+        'stock2': stock2, 
+    }
+
+    # Return only the dropdown menu portion of the page
+    return render(request, 'pages/stock_display.html', context)
 
 
 def stock_dropdown1(request):
@@ -33,6 +76,7 @@ def stock_dropdown1(request):
 
     # Return only the dropdown menu portion of the page
     return render(request, 'includes/stock_dropdown.html', context)
+
 
 def stock_dropdown2(request):
     # Read the CSV file into a DataFrame

@@ -1,25 +1,35 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block content %}
-<script>
+{% comment %} <script>
     document.addEventListener("DOMContentLoaded", function() {
-        document.getElementById("getStartedBtn").addEventListener("click", function() {
+     document.getElementById("getStartedBtn").addEventListener("click", function() {
             console.log("Button clicked!"); // Log message to console
             document.getElementById("mainContent").style.display = "block"; // Show the main content
             document.getElementById("getStartedBtn").style.display = "none"; // Hide the "Get Started" button
         });
     });
-</script>
+</script> {% endcomment %}
+
 <div class="content">
-    <div id="mainContent" style="display: none;">
+    <div id="mainContent" style="display: block;">
     <div class="row">
-        <div class="col-6">
+        <form class="" action="{% url 'graph_display' %}" method="get">
+         <div class="col-6">
             <div class="card card-chart">
                 <div class="card-header ">
                     <h4>Stock 1</h4>
                 </div>
                 <div class="card-body">
-                    {% include 'includes/stock_dropdown.html' %}
+                   <!-- stock_dropdown.html -->
+                    <label for="stock1">Choose a stock:</label>
+                    <select id="stock1" name="stock1">
+                        {% for ticker, name in tickers_data.items %}
+                        <option value="{{ ticker }}">{{ name }}</option>
+                        {% endfor %}
+                    </select>
+
+
                     <div><h4>Replace with stock graph</h4></div>
                     <canvas id="chartBig1"></canvas>
                 </div>
@@ -31,13 +41,24 @@
                     <h4>Stock 2</h4>
                 </div>
                 <div class="card-body">
-                    {% include 'includes/stock_dropdown.html' %}
+                
+                    
+                     <!-- stock_dropdown.html -->
+                     <label for="stock2">Choose a stock:</label>
+                     <select id="stock2" name="stock2">
+                         {% for ticker, name in tickers_data.items %}
+                         <option value="{{ ticker }}">{{ name }}</option>
+                         {% endfor %}
+                     </select>
+                     
                     <div><h4>Replace with stock graph</h4></div>
                     <canvas id="chartBig2"></canvas>
                 </div>
             </div>
         </div>
-        <div class="col-6">
+        <input type="submit" value="Submit">
+    </form>
+        {% comment %} <div class="col-6">
             <div class="card card-chart">
                 <div class="card-header ">
                 </div>
@@ -96,9 +117,9 @@
                 </div>
                 <p>Description of graph</p>
             </div>
-        </div>
+        </div> {% endcomment %}
         </div>
     </div>
-        <button id="getStartedBtn">Get Started</button> <!-- Button to show the content -->
+       {% comment %} <button id="getStartedBtn">Get Started</button> <!-- Button to show the content --> {% endcomment %}
 </div>
 {% endblock content %}
