@@ -12,7 +12,11 @@
                     </div>
                     <div class="card-body" style="height: 400px;"> <!-- Adjust the height as needed -->
                         <div id="chartBig1">
-                            {{ stock1 }}
+                            {% comment %} {{ sma1 }}
+                             {{ema1}}  {% endcomment %}
+
+                             <div>{{ graph1|safe }}</div> 
+
                         </div>
                     </div>
                 </div>
@@ -20,11 +24,14 @@
             <div class="col-lg-6">
                 <div class="card card-chart">
                     <div class="card-header">
-                        <h4>{{ stock2 }}</h4>
+                        <h4>{{stock2  }}</h4>
                     </div>
                     <div class="card-body" style="height: 400px;"> <!-- Adjust the height as needed -->
                         <div id="chartBig2">
-                            {{stock2}}
+                            {% comment %} {{ sma2 }}
+                             {{ema2}}  {% endcomment %}
+                             <div>{{ graph2|safe }}</div>
+                          
                         </div>
                     </div>
                 </div>
@@ -37,6 +44,6 @@
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
 <!-- Include JavaScript file for stock display logic -->
-<script src="{% static 'stock_display.js' %}"></script>
+{% comment %} <script src="{% static 'stock_display.js' %}"></script> {% endcomment %}
 
 {% endblock content %}
