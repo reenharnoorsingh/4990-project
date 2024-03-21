@@ -4,32 +4,39 @@
 
 <div class="content">
     <div id="mainContent">
-    <div class="row">
-        <div class="col-6">
-            <div class="card card-chart">
-                <div class="card-header ">
-                    <h4>{{stock1}}</h4>
-                </div>
-                <div class="card-body">
-                    <p>Please add data logic in view to show here</p>
-                    <div><h4>Replace with stock graph</h4></div>
-                    <canvas id="chartBig1"></canvas>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>{{ stock1 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 400px;"> <!-- Adjust the height as needed -->
+                        <div id="chartBig1">
+                            {{ stock1 }}
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-6">
-            <div class="card card-chart">
-                <div class="card-header ">
-                    <h4>{{stock2}}</h4>
-                </div>
-                <div class="card-body">
-                    <p>Please add data logic in view to show here</p>
-                    <div><h4>Replace with stock graph</h4></div>
-                    <canvas id="chartBig2"></canvas>
+            <div class="col-lg-6">
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>{{ stock2 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 400px;"> <!-- Adjust the height as needed -->
+                        <div id="chartBig2">
+                            {{stock2}}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Include Plotly library -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<!-- Include JavaScript file for stock display logic -->
+<script src="{% static 'stock_display.js' %}"></script>
 
 {% endblock content %}
