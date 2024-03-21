@@ -5,33 +5,80 @@
 <div class="content">
     <div id="mainContent">
         <div class="row">
-            <div class="col-lg-6">
+            <div class="col-6">
                 <div class="card card-chart">
                     <div class="card-header">
                         <h4>{{ stock1 }}</h4>
                     </div>
                     <div class="card-body" style="height: 400px;"> <!-- Adjust the height as needed -->
                         <div id="chartBig1">
-                            {% comment %} {{ sma1 }}
-                             {{ema1}}  {% endcomment %}
-
                              <div>{{ graph1|safe }}</div> 
-
                         </div>
-                    </div>
                 </div>
             </div>
-            <div class="col-lg-6">
+        </div>
+            <div class="col-6">
                 <div class="card card-chart">
                     <div class="card-header">
                         <h4>{{stock2  }}</h4>
                     </div>
                     <div class="card-body" style="height: 400px;"> <!-- Adjust the height as needed -->
-                        <div id="chartBig2">
-                            {% comment %} {{ sma2 }}
-                             {{ema2}}  {% endcomment %}
-                             <div>{{ graph2|safe }}</div>
-                          
+                            <div id="chartBig2">
+                                 <div>{{ graph2|safe }}</div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <div class="col-6">
+                         <div class="card card-chart">
+                                <div class="card-header ">
+                                </div>
+                                <div class="card-body" style="height: 400px">
+                                    <div id="chartBig3">
+                                        <div>{{sma1|safe}}</div>
+                                </div>
+                                <p>Description of graph</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card card-chart">
+                                <div class="card-header ">
+                                </div>
+                                <div class="card-body" style="height: 400px">
+                                    <div id="chartBig3">
+                                        <div>{{sma2|safe}}</div> 
+                               </div>
+                                <p>Description of graph</p>
+                            </div>
+                        </div>
+                        <div class="col-6"> 
+                        
+                     <div class="col-6">
+                         <div class="card card-chart">
+                                <div class="card-header ">
+                                </div>
+                                <div class="card-body" style="height: 400px">
+                                    <div id="chartBig4">
+                                        <div>{{ema1|safe}}</div>
+                                </div>
+                                <p>Description of graph</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card card-chart">
+                                <div class="card-header ">
+                                </div>
+                                <div class="card-body" style="height: 400px">
+                                    <div id="chartBig6">
+                                        <div>{{ema2|safe}}</div> 
+                             </div>
+                                <p>Description of graph</p>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            
+                            </div>
                         </div>
                     </div>
                 </div>
