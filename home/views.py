@@ -91,18 +91,20 @@ def stock_display(request):
     data1 = fetch_data(stock1)
     data2 = fetch_data(stock2)
 
-    sma_1 = calculate_sma(stock1,50)
-    sma_2 = calculate_sma(stock2,50)
-    # sma_3 = calculate_sma(stock1,200)
-    # sma_4 = calculate_sma(stock2,200)
-    ema_1 = calculate_ema(stock1,50) 
-    ema_2 = calculate_ema(stock2,50)
-    rsi_1 = calculate_rsi(stock1,14) 
-    rsi_2 = calculate_rsi(stock2,14)
-    macd_1 = calculate_macd(stock1, 12, 26, 9)
-    macd_2 = calculate_macd(stock2, 12, 26, 9)
-    bollinger_bands_1 = calculate_bollinger_bands(stock1, 20)
-    bollinger_bands_2 = calculate_bollinger_bands(stock2, 20)
+    # This is correct if data1 and data2 are DataFrames returned by the fetch_data function
+    sma_1 = calculate_sma(data1, 50)
+    sma_2 = calculate_sma(data2, 50)
+    print(type(data1.index))
+    # sma_3 = calculate_sma(data1,200)
+    # sma_4 = calculate_sma(data2,200)
+    ema_1 = calculate_ema(data1,50) 
+    ema_2 = calculate_ema(data2,50)
+    rsi_1 = calculate_rsi(data1) 
+    rsi_2 = calculate_rsi(data2)
+    macd_1, signal_1 = calculate_macd(data1, 12, 26, 9)
+    macd_2, signal_2 = calculate_macd(data2, 12, 26, 9)
+    bollinger_bands_1 = calculate_bollinger_bands(data1, 20)
+    bollinger_bands_2 = calculate_bollinger_bands(data2, 20)
     # lstm_dataset_1 = create_lstm_dataset(stock1, time_step)
     # lstm_dataset_2 = create_lstm_dataset(stock2, time_step)
     # train_lstm_model_1 = create_lstm_model(stock1)
@@ -111,20 +113,20 @@ def stock_display(request):
     # create_lstm_model_2 = train_lstm_model(stock2)
     # lstm_predction_1 = predict_lstm(stock1)
     # lstm_predction_2 = predict_lstm(stock2)
- 
+    print(type(data1.index))
     # Create Plotly graphs for the fetched data
     fig1 = go.Figure(data=[go.Scatter(x=data1.index, y=data1['Close'], mode='lines', name=stock1)])
     fig2 = go.Figure(data=[go.Scatter(x=data2.index, y=data2['Close'], mode='lines', name=stock2)])
-    fig3 = go.Figure(data=[go.Scatter(x=sma_1.index, y=sma_1['Close'], mode='lines', name=stock1)])
-    fig4 = go.Figure(data=[go.Scatter(x=sma_2.index, y=sma_2['Close'], mode='lines', name=stock2)])
-    fig5 = go.Figure(data=[go.Scatter(x=ema_1.index, y=ema_1['Close'], mode='lines', name=stock1)])
-    fig6 = go.Figure(data=[go.Scatter(x=ema_2.index, y=ema_2['Close'], mode='lines', name=stock2)])
-    fig7 = go.Figure(data=[go.Scatter(x=rsi_1.index, y=rsi_1['Close'], mode='lines', name=stock1)])
-    fig8 = go.Figure(data=[go.Scatter(x=rsi_2.index, y=data2['Close'], mode='lines', name=stock2)])
-    fig9 = go.Figure(data=[go.Scatter(x=macd_1.index, y=data2['Close'], mode='lines', name=stock2)])
-    fig10 = go.Figure(data=[go.Scatter(x=macd_2.index, y=data2['Close'], mode='lines', name=stock2)])
-    fig11 = go.Figure(data=[go.Scatter(x=bollinger_bands_1.index, y=bollinger_bands_1['Close'], mode='lines', name=stock1)])
-    fig12 = go.Figure(data=[go.Scatter(x=bollinger_bands_2.index, y=bollinger_bands_2['Close'], mode='lines', name=stock2)])
+    fig3 = go.Figure(data=[go.Scatter(x=data1.index, y=sma_1, mode='lines', name='SMA '+stock1)])
+    fig4 = go.Figure(data=[go.Scatter(x=data2.index, y=sma_2, mode='lines', name='SMA '+stock2)])
+    fig5 = go.Figure(data=[go.Scatter(x=data1.index, y=ema_1, mode='lines', name='EMA '+stock1)])
+    fig6 = go.Figure(data=[go.Scatter(x=data2.index, y=ema_2, mode='lines', name='EMA '+stock2)])
+    fig7 = go.Figure(data=[go.Scatter(x=data1.index, y=rsi_1, mode='lines', name='RSI '+stock1)])
+    fig8 = go.Figure(data=[go.Scatter(x=data2.index, y=rsi_2, mode='lines', name='RSI '+stock2)])
+    fig9 = go.Figure(data=[go.Scatter(x=data1.index, y=macd_1, mode='lines', name='MACD ' + stock1)])
+    fig10 = go.Figure(data=[go.Scatter(x=data2.index, y=macd_2, mode='lines', name='MACD ' + stock2)])
+    fig11 = go.Figure(data=[go.Scatter(x=data1.index, y=bollinger_bands_1, mode='lines', name=stock1)])
+    fig12 = go.Figure(data=[go.Scatter(x=data2.index, y=bollinger_bands_2, mode='lines', name=stock2)])
     # fig13 = go.Figure(data=[go.Scatter(x=lstm_dataset_1.index, y=lstm_dataset_1['Close'], mode='lines', name=stock1)])
     # fig14 = go.Figure(data=[go.Scatter(x=lstm_dataset_2.index, y=lstm_dataset_2['Close'], mode='lines', name=stock2)])
     # fig15 = go.Figure(data=[go.Scatter(x= train_lstm_model_1.index, y= train_lstm_model_1['Close'], mode='lines', name=stock1)])
@@ -180,8 +182,8 @@ def stock_display(request):
         'bollinger_bands1': div11,
         'bollinger_bands2' :div12,
 
-        'lstm_dataset1' : div13,
-        'lstm_dataset2' : div14,
+        #'lstm_dataset1' : div13,
+        #'lstm_dataset2' : div14,
 
         # 'train_lstm_model1' : div15,
         # 'train_lstm_model2' : div16,
