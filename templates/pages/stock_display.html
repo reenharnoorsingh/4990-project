@@ -206,6 +206,37 @@
                 </div>
             </div>
         </div>
+        <!-- Row 6: LTSM 1 and LTSM 2 -->
+        <div class="row">
+            <div class="col-6">
+                <!-- Thirteenth Section: LTSM 1 -->
+                <div class="card card-chart">
+                    <div class="card-body">
+                        <div id="chartBig13">
+                            <div>{{lstm_pred1|safe}}</div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-6">
+                <!-- Fourteenth Section: LTSM 2 -->
+                <div class="card card-chart">
+                    <div class="card-body">
+                        <div id="chartBig14">
+                            <div>{{lstm_pred2|safe}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                    <p>Description: This row displays the Long Short-Term Memory (LTSM) predictions for {{stock1}} and {{stock2}}.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
