@@ -107,6 +107,7 @@ def stock_display(request):
     
 
     # Create Plotly graphs for the fetched data
+    
     # Create the closing price plots
     fig1 = go.Figure(data=[go.Scatter(x=data1.index, y=data1['Close'], mode='lines', name='Closing Price')])
     fig1.update_layout(title='Closing Price - ' + stock1, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
