@@ -3,8 +3,10 @@ import yfinance as yf
 from django.http import HttpResponseServerError, HttpResponseRedirect
 from django.http import HttpResponse
 import pandas as pd
+
 import plotly.graph_objs as go
 from plotly.offline import plot
+# from backend import fetch_data
 
 from backend2 import (
     fetch_data,
@@ -13,6 +15,10 @@ from backend2 import (
     calculate_rsi,
     calculate_macd,
     calculate_bollinger_bands,
+    create_lstm_dataset,
+    create_lstm_model,
+    train_lstm_model,
+    predict_lstm
 )
 
 
@@ -97,83 +103,39 @@ def stock_display(request):
     rsi_2 = calculate_rsi(data2)
     macd_1, signal_1 = calculate_macd(data1, 12, 26, 9)
     macd_2, signal_2 = calculate_macd(data2, 12, 26, 9)
-    #bollinger_bands_1 = calculate_bollinger_bands(data1, 20)
-    # Bollinger Bands calculations
-    upper_band_1, lower_band_1 = calculate_bollinger_bands(data1, 20)
-    middle_band_1 = calculate_sma(data1, 20)
-    #bollinger_bands_2 = calculate_bollinger_bands(data2, 20)
-    upper_band_2, lower_band_2 = calculate_bollinger_bands(data2, 20)
-    middle_band_2 = calculate_sma(data2, 20)
-    
-
+    bollinger_bands_1 = calculate_bollinger_bands(data1, 20)
+    bollinger_bands_2 = calculate_bollinger_bands(data2, 20)
+    # lstm_dataset_1 = create_lstm_dataset(stock1, time_step)
+    # lstm_dataset_2 = create_lstm_dataset(stock2, time_step)
+    # train_lstm_model_1 = create_lstm_model(stock1)
+    # train_lstm_model_2 = create_lstm_model(stock2)
+    # create_lstm_model_1 = train_lstm_model(stock1)
+    # create_lstm_model_2 = train_lstm_model(stock2)
+    # lstm_predction_1 = predict_lstm(stock1)
+    # lstm_predction_2 = predict_lstm(stock2)
+    print(type(data1.index))
     # Create Plotly graphs for the fetched data
-    
-    # Create the closing price plots
-    fig1 = go.Figure(data=[go.Scatter(x=data1.index, y=data1['Close'], mode='lines', name='Closing Price')])
-    fig1.update_layout(title='Closing Price - ' + stock1, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
-
-    fig2 = go.Figure(data=[go.Scatter(x=data2.index, y=data2['Close'], mode='lines', name='Closing Price')])
-    fig2.update_layout(title='Closing Price - ' + stock2, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
-
-    # Create the SMA plots
-    fig3 = go.Figure()
-    fig3.add_trace(go.Scatter(x=data1.index, y=data1['Close'], mode='lines', name='Close Price'))
-    fig3.add_trace(go.Scatter(x=data1.index, y=sma_1, mode='lines', name='50-day SMA'))
-    fig3.update_layout(title='Simple Moving Average (SMA) - ' + stock1, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
-
-    fig4 = go.Figure()
-    fig4.add_trace(go.Scatter(x=data2.index, y=data2['Close'], mode='lines', name='Close Price'))
-    fig4.add_trace(go.Scatter(x=data2.index, y=sma_2, mode='lines', name='50-day SMA'))
-    fig4.update_layout(title='Simple Moving Average (SMA) - ' + stock2, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
-
-    # Create the EMA plots
-    fig5 = go.Figure()
-    fig5.add_trace(go.Scatter(x=data1.index, y=data1['Close'], mode='lines', name='Close Price'))
-    fig5.add_trace(go.Scatter(x=data1.index, y=ema_1, mode='lines', name='50-day EMA'))
-    fig5.update_layout(title='Exponential Moving Average (EMA) - ' + stock1, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
-
-    fig6 = go.Figure()
-    fig6.add_trace(go.Scatter(x=data2.index, y=data2['Close'], mode='lines', name='Close Price'))
-    fig6.add_trace(go.Scatter(x=data2.index, y=ema_2, mode='lines', name='50-day EMA'))
-    fig6.update_layout(title='Exponential Moving Average (EMA) - ' + stock2, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
-
-    # Create the RSI plots
-    fig7 = go.Figure()
-    fig7.add_trace(go.Scatter(x=data1.index, y=rsi_1, mode='lines', name='RSI'))
-    fig7.add_hline(y=70, line_dash="dot", annotation_text="Overbought", annotation_position="bottom right")
-    fig7.add_hline(y=30, line_dash="dot", annotation_text="Oversold", annotation_position="bottom right")
-    fig7.update_layout(title='Relative Strength Index (RSI) - ' + stock1, xaxis_title='Date', yaxis_title='RSI', template='plotly_white')
-
-    fig8 = go.Figure()
-    fig8.add_trace(go.Scatter(x=data2.index, y=rsi_2, mode='lines', name='RSI'))
-    fig8.add_hline(y=70, line_dash="dot", annotation_text="Overbought", annotation_position="bottom right")
-    fig8.add_hline(y=30, line_dash="dot", annotation_text="Oversold", annotation_position="bottom right")
-    fig8.update_layout(title='Relative Strength Index (RSI) - ' + stock2, xaxis_title='Date', yaxis_title='RSI', template='plotly_white')
-
-    # Create the MACD plots
-    fig9 = go.Figure()
-    fig9.add_trace(go.Scatter(x=data1.index, y=macd_1, mode='lines', name='MACD'))
-    fig9.add_trace(go.Scatter(x=data1.index, y=signal_1, mode='lines', name='Signal'))
-    fig9.update_layout(title='Moving Average Convergence Divergence (MACD) - ' + stock1, xaxis_title='Date', yaxis_title='MACD', template='plotly_white')
-
-    fig10 = go.Figure()
-    fig10.add_trace(go.Scatter(x=data2.index, y=macd_2, mode='lines', name='MACD'))
-    fig10.add_trace(go.Scatter(x=data2.index, y=signal_2, mode='lines', name='Signal'))
-    fig10.update_layout(title='Moving Average Convergence Divergence (MACD) - ' + stock2, xaxis_title='Date', yaxis_title='MACD', template='plotly_white')
-
-    # Create the Bollinger Bands plots
-    fig11 = go.Figure()
-    fig11.add_trace(go.Scatter(x=data1.index, y=upper_band_1, mode='lines', name='Upper Band'))
-    fig11.add_trace(go.Scatter(x=data1.index, y=middle_band_1, mode='lines', name='Middle Band'))
-    fig11.add_trace(go.Scatter(x=data1.index, y=lower_band_1, mode='lines', name='Lower Band'))
-    fig11.update_layout(title='Bollinger Bands - ' + stock1, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
-
-    fig12 = go.Figure()
-    fig12.add_trace(go.Scatter(x=data2.index, y=upper_band_2, mode='lines', name='Upper Band'))
-    fig12.add_trace(go.Scatter(x=data2.index, y=middle_band_2, mode='lines', name='Middle Band'))
-    fig12.add_trace(go.Scatter(x=data2.index, y=lower_band_2, mode='lines', name='Lower Band'))
-    fig12.update_layout(title='Bollinger Bands - ' + stock2, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
-    
+    fig1 = go.Figure(data=[go.Scatter(x=data1.index, y=data1['Close'], mode='lines', name=stock1)])
+    fig2 = go.Figure(data=[go.Scatter(x=data2.index, y=data2['Close'], mode='lines', name=stock2)])
+    fig3 = go.Figure(data=[go.Scatter(x=data1.index, y=sma_1, mode='lines', name='SMA '+stock1)])
+    fig4 = go.Figure(data=[go.Scatter(x=data2.index, y=sma_2, mode='lines', name='SMA '+stock2)])
+    fig5 = go.Figure(data=[go.Scatter(x=data1.index, y=ema_1, mode='lines', name='EMA '+stock1)])
+    fig6 = go.Figure(data=[go.Scatter(x=data2.index, y=ema_2, mode='lines', name='EMA '+stock2)])
+    fig7 = go.Figure(data=[go.Scatter(x=data1.index, y=rsi_1, mode='lines', name='RSI '+stock1)])
+    fig8 = go.Figure(data=[go.Scatter(x=data2.index, y=rsi_2, mode='lines', name='RSI '+stock2)])
+    fig9 = go.Figure(data=[go.Scatter(x=data1.index, y=macd_1, mode='lines', name='MACD ' + stock1)])
+    fig10 = go.Figure(data=[go.Scatter(x=data2.index, y=macd_2, mode='lines', name='MACD ' + stock2)])
+    fig11 = go.Figure(data=[go.Scatter(x=data1.index, y=bollinger_bands_1, mode='lines', name=stock1)])
+    fig12 = go.Figure(data=[go.Scatter(x=data2.index, y=bollinger_bands_2, mode='lines', name=stock2)])
+    # fig13 = go.Figure(data=[go.Scatter(x=lstm_dataset_1.index, y=lstm_dataset_1['Close'], mode='lines', name=stock1)])
+    # fig14 = go.Figure(data=[go.Scatter(x=lstm_dataset_2.index, y=lstm_dataset_2['Close'], mode='lines', name=stock2)])
+    # fig15 = go.Figure(data=[go.Scatter(x= train_lstm_model_1.index, y= train_lstm_model_1['Close'], mode='lines', name=stock1)])
+    # fig16 = go.Figure(data=[go.Scatter(x= train_lstm_model_2.index, y= train_lstm_model_2['Close'], mode='lines', name=stock2)])
+    # fig17 = go.Figure(data=[go.Scatter(x=create_lstm_model_1.index, y=create_lstm_model_1['Close'], mode='lines', name=stock1)])
+    # fig18 = go.Figure(data=[go.Scatter(x=create_lstm_model_2.index, y=create_lstm_model_2['Close'], mode='lines', name=stock2)])
+    # fig19 = go.Figure(data=[go.Scatter(x=lstm_predction_1.index, y=lstm_predction_1['Close'], mode='lines', name=stock2)])
+    # fig20 = go.Figure(data=[go.Scatter(x=lstm_predction_2.index, y=lstm_predction_2['Close'], mode='lines', name=stock2)])
+ 
     # Convert the figures to HTML div strings
     div1 = plot(fig1, output_type='div', include_plotlyjs=False)
     div2 = plot(fig2, output_type='div', include_plotlyjs=False)
@@ -187,7 +149,14 @@ def stock_display(request):
     div10 = plot(fig10, output_type='div', include_plotlyjs=False)
     div11 = plot(fig11, output_type='div', include_plotlyjs=False)
     div12 = plot(fig12, output_type='div', include_plotlyjs=False)
-    
+    # div13 = plot(fig13, output_type='div', include_plotlyjs=False)
+    # div14 = plot(fig14, output_type='div', include_plotlyjs=False)
+    # div15 = plot(fig15, output_type='div', include_plotlyjs=False)
+    # div16 = plot(fig16, output_type='div', include_plotlyjs=False)
+    # div17 = plot(fig17, output_type='div', include_plotlyjs=False)
+    # div18 = plot(fig18, output_type='div', include_plotlyjs=False)
+    # div19 = plot(fig19, output_type='div', include_plotlyjs=False)
+    # div20 = plot(fig20, output_type='div', include_plotlyjs=False)
    
 
     context = {
@@ -213,6 +182,17 @@ def stock_display(request):
         'bollinger_bands1': div11,
         'bollinger_bands2' :div12,
 
+        #'lstm_dataset1' : div13,
+        #'lstm_dataset2' : div14,
+
+        # 'train_lstm_model1' : div15,
+        # 'train_lstm_model2' : div16,
+
+        # 'create_lstm_model1' : div17,
+        # 'create_lstm_model2' : div18,
+        
+        # 'lstm_predction1' : div19,
+        # 'lstm_predction2' : div20
  
     }
  
