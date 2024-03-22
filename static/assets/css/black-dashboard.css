@@ -40,7 +40,7 @@
 *,
 *::before,
 *::after {
-  box-sizing: content-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -76,7 +76,7 @@ body {
 .content {
   display:flex;
   flex-direction: column;
-  
+  margin-right:15rem;
 
 }
 
@@ -88,7 +88,7 @@ body {
 
 hr {
   box-sizing: content-box;
-  height: 1000px;
+  height: 0;
   overflow: visible;
 }
 
@@ -307,7 +307,7 @@ button::-moz-focus-inner,
 
 input[type="radio"],
 input[type="checkbox"] {
-  box-sizing: content-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -593,8 +593,8 @@ pre code {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: 2px;
-  margin-left: 2px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 @media (min-width: 576px) {
@@ -625,23 +625,16 @@ pre code {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  margin-right: 2px;
-  margin-left: 2px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .row {
   display: flex;
   flex-wrap: wrap;
-  /* Make sure there is no negative margin that could be causing layout issues */
-  margin-right: 0;
-  margin-left: 0;
-  position: relative; /* Ensure the position is relative for proper scaling */
-  width: 50%; /* This should already be set by the grid system */
-  min-height: 1px; /* Ensure there is a minimum height */
-  padding-right: 15px; /* You can adjust this if necessary */
-  padding-left: 15px; /* You can adjust this if necessary */
+  margin-right: -15px;
+  margin-left: -15px;
 }
-
 
 .no-gutters {
   margin-right: 0;
@@ -5189,13 +5182,9 @@ input[type="button"].btn-block {
 }
 
 .card-body {
-  flex: 1 1 auto; /* This line is setting the card-body to flex. You might want to set a specific flex-basis or width here */
+  flex: 1 1 auto;
   padding: 1.5rem;
-  /* Add the following line to set a minimum width */
-  min-width: 0; /* This ensures that flex items respect their width constraints */
-  width: 50%; /* This will make the card-body take the full width of its parent */
 }
-
 
 .card-title {
   margin-bottom: 1.25rem;
@@ -12638,7 +12627,7 @@ a.text-darker:focus {
   }
 
   .container {
-    min-width: 100px !important;
+    min-width: 992px !important;
   }
 
   .navbar {
@@ -17803,8 +17792,8 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .main-panel {
-  margin: left 1px;;
-  margin-right:1px;
+  margin-left:auto;
+  margin-right:auto;
   float: right;
   width: 100%;
   min-height: 100vh;
@@ -17830,8 +17819,8 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .main-panel>.content {
-  padding: 78px 30px 30px 30px;
-  
+  padding: 78px 30px 30px 280px;
+  min-height: calc(100vh - 70px);
 }
 
 .main-panel>.navbar {
@@ -19793,7 +19782,7 @@ Copyright (c) 2015 Daniel Eden
 
 .white-content .card:not(.card-white) {
   background: #ffffff;
-  box-shadow: 0 1px 15px 0 rgba(50, 50, 93, 0.11);
+  box-shadow: 0 1px 15px 0 rgba(, , , 0.05);
 }
 
 .white-content .card:not(.card-white) .card-header {
