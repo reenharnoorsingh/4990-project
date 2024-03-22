@@ -10,17 +10,7 @@
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     {% include 'includes/head.html' %}
     {% block extrahead %}{% endblock extrahead %}
-    {% block extrastyle %}
-    <!-- Background image CSS -->
-    <style>
-        body {
-            background-image: url('{% static 'assets/img/stock.jpg' %}');
-            background-size: cover;
-            background-repeat: no-repeat;
-            height: 100%;
-        }
-    </style>
-    {% endblock extrastyle %}
+    {% block extrastyle %}{% endblock extrastyle %}
 </head>
 
 <body class="{% block bodyclass %}{% endblock bodyclass %}">
