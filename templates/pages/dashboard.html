@@ -1,50 +1,125 @@
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block content %}
+{% comment %} <script>
+    document.addEventListener("DOMContentLoaded", function() {
+     document.getElementById("getStartedBtn").addEventListener("click", function() {
+            console.log("Button clicked!"); // Log message to console
+            document.getElementById("mainContent").style.display = "block"; // Show the main content
+            document.getElementById("getStartedBtn").style.display = "none"; // Hide the "Get Started" button
+        });
+    });
+</script> {% endcomment %}
+
 <div class="content">
     <div id="mainContent" style="display: block;">
-        <div class="row"> 
-            <form class="" action="{% url 'graph_display' %}" method="get">
-                <h1 style="text-align: center; margin-bottom: 100px;">Stock Analyzer</h1> <!-- Centered heading -->
-                <p style= "text-align: center; margin-bottom: 100px;"> Welcome to Stock Analyzer, your one-stop platform for analyzing stock data and trends.</p> <!-- Description -->
+    <div class="row">
+        <form class="" action="{% url 'graph_display' %}" method="get">
+         <div class="col-6">
+            <div class="card card-chart">
+                <div class="card-header ">
+                    <h4>Stock 1</h4>
+                </div>
+                <div class="card-body">
+                   <!-- stock_dropdown.html -->
+                    <label for="stock1">Choose a stock:</label>
+                    <select id="stock1" name="stock1">
+                        {% for ticker, name in tickers_data.items %}
+                        <option value="{{ ticker }}">{{ name }}</option>
+                        {% endfor %}
+                    </select>
 
-                <div class="stocks-container" style="display: flex; justify-content: space-between;"> <!-- Adjusted container styles -->
-                    <div class="card card-chart" style="margin-right: 10px;"> <!-- Added margin-right for spacing -->
-                        <div class="card-header">
-                            <h4>Stock 1</h4>
-                        </div>
-                        <div class="card-body">
-                            <!-- stock_dropdown.html -->
-                            <label for="stock1">Choose a stock:</label>
-                            <select id="stock1" name="stock1">
-                                {% for ticker, name in tickers_data.items %}
-                                <option value="{{ ticker }}">{{ name }}</option>
-                                {% endfor %}
-                            </select>
-                            <canvas id="chartBig1"></canvas>
-                        </div>
-                    </div>
-                    <div class="card card-chart" style="margin-left: 10px;"> <!-- Added margin-left for spacing -->
-                        <div class="card-header">
-                            <h4>Stock 2</h4>
-                        </div>
-                        <div class="card-body">
-                            <!-- stock_dropdown.html -->
-                            <label for="stock2">Choose a stock:</label>
-                            <select id="stock2" name="stock2">
-                                {% for ticker, name in tickers_data.items %}
-                                <option value="{{ ticker }}">{{ name }}</option>
-                                {% endfor %}
-                            </select>
-                            <canvas id="chartBig2"></canvas>
-                        </div>
-                    </div>
+
+                    <div><h4>Replace with stock graph</h4></div>
+                    <canvas id="chartBig1"></canvas>
                 </div>
-                <div class="col-12" style="text-align: center; margin-top: 10px;"> <!-- Centered submit button -->
-                    <input type="submit" value="Submit" class="submit-btn" style="height: 60px; padding: 15px 15px; font-size: 24px;">
+              </div>
+             </div>
+             <div class="col-6">
+             <div class="card card-chart">
+                <div class="card-header ">
+                    <h4>Stock 2</h4>
                 </div>
-            </form>
+                <div class="card-body">
+                
+                    
+                     <!-- stock_dropdown.html -->
+                     <label for="stock2">Choose a stock:</label>
+                     <select id="stock2" name="stock2">
+                         {% for ticker, name in tickers_data.items %}
+                         <option value="{{ ticker }}">{{ name }}</option>
+                         {% endfor %}
+                     </select>
+                     
+                    <div><h4>Replace with stock graph</h4></div>
+                    <canvas id="chartBig2"></canvas>
+                </div>
+               </div>
+             </div>
+                 <input type="submit" value="Submit">
+         </form>
+        {% comment %} <div class="col-6">
+            <div class="card card-chart">
+                <div class="card-header ">
+                </div>
+                <div class="card-body">
+                    <div><h4>Graph here</h4></div>
+                </div>
+                <p>Description of graph</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card card-chart">
+                <div class="card-header ">
+                </div>
+                <div class="card-body">
+                    <div><h4>Graph here</h4></div>
+                </div>
+                <p>Description of graph</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card card-chart">
+                <div class="card-header ">
+                </div>
+                <div class="card-body">
+                    <div><h4>Graph here</h4></div>
+                </div>
+                <p>Description of graph</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card card-chart">
+                <div class="card-header ">
+                </div>
+                <div class="card-body">
+                    <div><h4>Graph here</h4></div>
+                </div>
+                <p>Description of graph</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card card-chart">
+                <div class="card-header ">
+                </div>
+                <div class="card-body">
+                    <div><h4>Graph here</h4></div>
+                </div>
+                <p>Description of graph</p>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card card-chart">
+                <div class="card-header ">
+                </div>
+                <div class="card-body">
+                    <div><h4>Graph here</h4></div>
+                </div>
+                <p>Description of graph</p>
+            </div>
+        </div> {% endcomment %}
         </div>
     </div>
+       {% comment %} <button id="getStartedBtn">Get Started</button> <!-- Button to show the content --> {% endcomment %}
 </div>
 {% endblock content %}
