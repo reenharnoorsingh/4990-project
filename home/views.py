@@ -189,18 +189,93 @@ def stock_display(request):
     fig10.add_trace(go.Scatter(x=data2.index, y=signal_2, mode='lines', name='Signal'))
     fig10.update_layout(title='Moving Average Convergence Divergence (MACD) - ' + stock2, xaxis_title='Date', yaxis_title='MACD', template='plotly_white')
 
-    # Create the Bollinger Bands plots
-    fig11 = go.Figure()
-    fig11.add_trace(go.Scatter(x=data1.index, y=upper_band_1, mode='lines', name='Upper Band'))
-    fig11.add_trace(go.Scatter(x=data1.index, y=middle_band_1, mode='lines', name='Middle Band'))
-    fig11.add_trace(go.Scatter(x=data1.index, y=lower_band_1, mode='lines', name='Lower Band'))
-    fig11.update_layout(title='Bollinger Bands - ' + stock1, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
+    # # Create the Bollinger Bands plots
+    # fig11 = go.Figure()
+    # fig11.add_trace(go.Scatter(x=data1.index, y=upper_band_1, mode='lines', name='Upper Band'))
+    # fig11.add_trace(go.Scatter(x=data1.index, y=middle_band_1, mode='lines', name='Middle Band'))
+    # fig11.add_trace(go.Scatter(x=data1.index, y=lower_band_1, mode='lines', name='Lower Band'))
+    # fig11.update_layout(title='Bollinger Bands - ' + stock1, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
 
+    # fig12 = go.Figure()
+    # fig12.add_trace(go.Scatter(x=data2.index, y=upper_band_2, mode='lines', name='Upper Band'))
+    # fig12.add_trace(go.Scatter(x=data2.index, y=middle_band_2, mode='lines', name='Middle Band'))
+    # fig12.add_trace(go.Scatter(x=data2.index, y=lower_band_2, mode='lines', name='Lower Band'))
+    # fig12.update_layout(title='Bollinger Bands - ' + stock2, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
+
+    # Create the Bollinger Bands plots for stock1
+    fig11 = go.Figure()
+
+    # Upper Band
+    fig11.add_trace(go.Scatter(
+        x=data1.index, y=upper_band_1, 
+        mode='lines', 
+        name='Upper Band',
+        line=dict(color='rgba(22, 96, 167, 0.8)'),  # Adjust the color to be distinct
+    ))
+
+    # Lower Band
+    fig11.add_trace(go.Scatter(
+        x=data1.index, y=lower_band_1,
+        mode='lines', 
+        fill='tonexty',  # Fill between the upper and lower bands
+        fillcolor='rgba(135, 206, 250, 0.5)',  # Use a semi-transparent fill color
+        name='Lower Band',
+        line=dict(color='rgba(22, 96, 167, 0.8)'),  # Match the color with the upper band
+    ))
+
+    # Middle Band (20-period SMA)
+    fig11.add_trace(go.Scatter(
+        x=data1.index, y=middle_band_1, 
+        mode='lines', 
+        name='20-period SMA',
+        line=dict(color='rgba(255, 99, 71, 0.8)'),  # Use a contrasting color for the middle band
+    ))
+
+    # Update the layout with the desired template
+    fig11.update_layout(
+        title='Bollinger Bands - ' + stock1, 
+        xaxis_title='Date', 
+        yaxis_title='Price', 
+        template='plotly_white'
+    )
+
+    # Create the Bollinger Bands plots for stock2
     fig12 = go.Figure()
-    fig12.add_trace(go.Scatter(x=data2.index, y=upper_band_2, mode='lines', name='Upper Band'))
-    fig12.add_trace(go.Scatter(x=data2.index, y=middle_band_2, mode='lines', name='Middle Band'))
-    fig12.add_trace(go.Scatter(x=data2.index, y=lower_band_2, mode='lines', name='Lower Band'))
-    fig12.update_layout(title='Bollinger Bands - ' + stock2, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
+
+    # Upper Band
+    fig12.add_trace(go.Scatter(
+        x=data2.index, y=upper_band_2, 
+        mode='lines', 
+        name='Upper Band',
+        line=dict(color='rgba(22, 96, 167, 0.8)'),  # Adjust the color to be distinct
+    ))
+
+    # Lower Band
+    fig12.add_trace(go.Scatter(
+        x=data2.index, y=lower_band_2,
+        mode='lines', 
+        fill='tonexty',  # Fill between the upper and lower bands
+        fillcolor='rgba(135, 206, 250, 0.5)',  # Use a semi-transparent fill color
+        name='Lower Band',
+        line=dict(color='rgba(22, 96, 167, 0.8)'),  # Match the color with the upper band
+    ))
+
+    # Middle Band (20-period SMA)
+    fig12.add_trace(go.Scatter(
+        x=data2.index, y=middle_band_2, 
+        mode='lines', 
+        name='20-period SMA',
+        line=dict(color='rgba(255, 99, 71, 0.8)'),  # Use a contrasting color for the middle band
+    ))
+
+    # Update the layout with the desired template
+    fig12.update_layout(
+        title='Bollinger Bands - ' + stock2, 
+        xaxis_title='Date', 
+        yaxis_title='Price', 
+        template='plotly_white'
+    )
+
     
     # # Create the ARIMA prediction plots
     # fig13 = go.Figure()
