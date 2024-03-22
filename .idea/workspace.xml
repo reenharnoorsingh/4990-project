@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe8293ac-c551-407e-b062-244002c0f207" name="Changes" comment="">
+    <list default="true" id="fe8293ac-c551-407e-b062-244002c0f207" name="Changes" comment="Fixed descriptions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/fixed-plugin.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/fixed-plugin.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/head.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/menu-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/menu-list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/includes/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/includes/sidebar.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/pages/stock_display.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/stock_display.html" afterDir="false" />
     </list>
@@ -18,17 +17,41 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Ingratt4"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="aa6228e4-fef3-4706-b56b-ec49bf2da190" />
+        <option name="url" value="https://github.com/reenharnoorsingh/4990-project" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
   <component name="ProjectId" id="2e2TV56V4fptBOQt24UTzcMWlme" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -37,8 +60,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1711101694981</updated>
+      <workItem from="1711115838999" duration="1302000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -50,5 +77,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed descriptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed descriptions" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/4990_project$tsxScrapper.coverage" NAME="tsxScrapper Coverage Results" MODIFIED="1710534876727" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Initial Testing/Harnoor" />
+    <SUITE FILE_PATH="coverage/4990_project$backend.coverage" NAME="backend Coverage Results" MODIFIED="1710813546122" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/4990_project$views.coverage" NAME="views Coverage Results" MODIFIED="1710536218222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/home" />
+    <SUITE FILE_PATH="coverage/4990_project$tests.coverage" NAME="tests Coverage Results" MODIFIED="1710536222355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/home" />
   </component>
 </project>
