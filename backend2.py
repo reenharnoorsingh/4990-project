@@ -38,10 +38,10 @@ def calculate_macd(data, short_window, long_window, signal_window):
     return macd, signal_line
 
 def calculate_bollinger_bands(data, window):
-    rolling_mean = data['Close'].rolling(window=window).mean()
+    middle_band = data['Close'].rolling(window=window).mean()
     rolling_std = data['Close'].rolling(window=window).std()
-    upper_band = rolling_mean + (rolling_std * 2)
-    lower_band = rolling_mean - (rolling_std * 2)
+    upper_band = middle_band + (rolling_std * 2)
+    lower_band = middle_band - (rolling_std * 2)
     return upper_band, lower_band
 
 def create_lstm_dataset(data, time_step=100):
