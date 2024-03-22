@@ -1,50 +1,56 @@
+<!-- display_stocks.html -->
 {% extends 'layouts/base.html' %}
 {% load static %}
 {% block content %}
 <div class="content">
     <div id="mainContent" style="display: block;">
-        <div class="row"> 
-            <form class="" action="{% url 'graph_display' %}" method="get">
-                <h1 style="text-align: center; margin-bottom: 100px;">Stock Analyzer</h1> <!-- Centered heading -->
-                <p style= "text-align: center; margin-bottom: 100px;"> Welcome to Stock Analyzer, your one-stop platform for analyzing stock data and trends.</p> <!-- Description -->
-
-                <div class="stocks-container" style="display: flex; justify-content: space-between;"> <!-- Adjusted container styles -->
-                    <div class="card card-chart" style="margin-right: 10px;"> <!-- Added margin-right for spacing -->
-                        <div class="card-header">
-                            <h4>Stock 1</h4>
-                        </div>
-                        <div class="card-body">
-                            <!-- stock_dropdown.html -->
-                            <label for="stock1">Choose a stock:</label>
-                            <select id="stock1" name="stock1">
-                                {% for ticker, name in tickers_data.items %}
-                                <option value="{{ ticker }}">{{ name }}</option>
-                                {% endfor %}
-                            </select>
-                            <canvas id="chartBig1"></canvas>
-                        </div>
+        <div class="row justify-content-center">
+            <h1 style="text-align: center; margin-bottom: 50px; color: white;">Stock Display</h1> <!-- Centered heading -->
+            <form class="mb-4" action="{% url 'graph_display' %}" method="get">
+                <div class="form-group row justify-content-center">
+                    <div class="col-md-4">
+                        <select class="form-control form-control-lg rounded-pill text-white" name="stock1" id="stock1">
+                            <option value="" selected disabled style="display: none;">Select Stock 1</option>
+                            {% for ticker, name in tickers_data.items %}
+                            <option value="{{ ticker }}">{{ name }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
-                    <div class="card card-chart" style="margin-left: 10px;"> <!-- Added margin-left for spacing -->
-                        <div class="card-header">
-                            <h4>Stock 2</h4>
-                        </div>
-                        <div class="card-body">
-                            <!-- stock_dropdown.html -->
-                            <label for="stock2">Choose a stock:</label>
-                            <select id="stock2" name="stock2">
-                                {% for ticker, name in tickers_data.items %}
-                                <option value="{{ ticker }}">{{ name }}</option>
-                                {% endfor %}
-                            </select>
-                            <canvas id="chartBig2"></canvas>
-                        </div>
+                    <div class="col-md-4">
+                        <select class="form-control form-control-lg rounded-pill text-white" name="stock2" id="stock2">
+                            <option value="" selected disabled style="display: none;">Select Stock 2</option>
+                            {% for ticker, name in tickers_data.items %}
+                            <option value="{{ ticker }}">{{ name }}</option>
+                            {% endfor %}
+                        </select>
                     </div>
                 </div>
-                <div class="col-12" style="text-align: center; margin-top: 10px;"> <!-- Centered submit button -->
-                    <input type="submit" value="Submit" class="submit-btn" style="height: 60px; padding: 15px 15px; font-size: 24px;">
+                <div class="form-group row justify-content-center">
+                    <div class="col-md-4">
+                        <input type="text" class="form-control rounded-pill text-white bg-dark" id="selected_stock1" name="selected_stock1" readonly>
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" class="form-control rounded-pill text-white bg-dark" id="selected_stock2" name="selected_stock2" readonly>
+                    </div>
+                </div>
+                <div class="form-group row justify-content-center">
+                    <div class="col-md-8 text-center">
+                        <button type="submit" class="btn btn-primary btn-lg rounded-pill mt-3">Submit</button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<script>
+    // Script to update selected stocks in text boxes
+    document.getElementById('stock1').addEventListener('change', function() {
+        document.getElementById('selected_stock1').value = this.value;
+    });
+
+    document.getElementById('stock2').addEventListener('change', function() {
+        document.getElementById('selected_stock2').value = this.value;
+    });
+</script>
 {% endblock content %}
