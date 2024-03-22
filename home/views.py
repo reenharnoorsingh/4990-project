@@ -146,6 +146,14 @@ def stock_display(request):
     fig4.add_trace(go.Scatter(x=data2.index, y=sma_2, mode='lines', name='50-day SMA'))
     fig4.update_layout(title='Simple Moving Average (SMA) - ' + stock2, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
 
+    # Calculate the 200-day SMA
+    sma_1_200 = calculate_sma(data1, 200)
+    sma_2_200 = calculate_sma(data2, 200)
+
+    # Add the 200-day SMA to the SMA plots
+    fig3.add_trace(go.Scatter(x=data1.index, y=sma_1_200, mode='lines', name='200-day SMA'))
+    fig4.add_trace(go.Scatter(x=data2.index, y=sma_2_200, mode='lines', name='200-day SMA'))
+
     # Create the EMA plots
     fig5 = go.Figure()
     fig5.add_trace(go.Scatter(x=data1.index, y=data1['Close'], mode='lines', name='Close Price'))
