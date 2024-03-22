@@ -105,12 +105,12 @@ def stock_display(request):
     upper_band_2, lower_band_2 = calculate_bollinger_bands(data2, 20)
     middle_band_2 = calculate_sma(data2, 20)
     
-    # Fit and predict using ARIMA
-    arima_model1 = fit_arima_model(data1['Close'])
-    arima_pred1 = arima_model1.predict(start=len(data1), end=len(data1) + 30)  # Predict the next 30 days
+    # # Fit and predict using ARIMA
+    # arima_model1 = fit_arima_model(data1['Close'])
+    # arima_pred1 = arima_model1.predict(start=len(data1), end=len(data1) + 30)  # Predict the next 30 days
 
-    arima_model2 = fit_arima_model(data2['Close'])
-    arima_pred2 = arima_model2.predict(start=len(data2), end=len(data2) + 30)
+    # arima_model2 = fit_arima_model(data2['Close'])
+    # arima_pred2 = arima_model2.predict(start=len(data2), end=len(data2) + 30)
 
     # Prepare data for LSTM
     scaler1, scaled_data1 = scale_data(data1['Close'])
@@ -194,16 +194,16 @@ def stock_display(request):
     fig12.add_trace(go.Scatter(x=data2.index, y=lower_band_2, mode='lines', name='Lower Band'))
     fig12.update_layout(title='Bollinger Bands - ' + stock2, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
     
-    # Create the ARIMA prediction plots
-    fig13 = go.Figure()
-    fig13.add_trace(go.Scatter(x=data1.index, y=data1['Close'], mode='lines', name='Close Price'))
-    fig13.add_trace(go.Scatter(x=arima_pred1.index, y=arima_pred1, mode='lines', name='ARIMA Prediction'))
-    fig13.update_layout(title='ARIMA Prediction - ' + stock1, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
+    # # Create the ARIMA prediction plots
+    # fig13 = go.Figure()
+    # fig13.add_trace(go.Scatter(x=data1.index, y=data1['Close'], mode='lines', name='Close Price'))
+    # fig13.add_trace(go.Scatter(x=arima_pred1.index, y=arima_pred1, mode='lines', name='ARIMA Prediction'))
+    # fig13.update_layout(title='ARIMA Prediction - ' + stock1, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
     
-    fig14 = go.Figure()
-    fig14.add_trace(go.Scatter(x=data2.index, y=data2['Close'], mode='lines', name='Close Price'))
-    fig14.add_trace(go.Scatter(x=arima_pred2.index, y=arima_pred2, mode='lines', name='ARIMA Prediction'))
-    fig14.update_layout(title='ARIMA Prediction - ' + stock2, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
+    # fig14 = go.Figure()
+    # fig14.add_trace(go.Scatter(x=data2.index, y=data2['Close'], mode='lines', name='Close Price'))
+    # fig14.add_trace(go.Scatter(x=arima_pred2.index, y=arima_pred2, mode='lines', name='ARIMA Prediction'))
+    # fig14.update_layout(title='ARIMA Prediction - ' + stock2, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
 
     #create the LSTM prediction plots
     fig15 = go.Figure()
@@ -230,8 +230,8 @@ def stock_display(request):
     div10 = plot(fig10, output_type='div', include_plotlyjs=False)
     div11 = plot(fig11, output_type='div', include_plotlyjs=False)
     div12 = plot(fig12, output_type='div', include_plotlyjs=False)
-    div13 = plot(fig13, output_type='div', include_plotlyjs=False)
-    div14 = plot(fig14, output_type='div', include_plotlyjs=False)
+    # div13 = plot(fig13, output_type='div', include_plotlyjs=False)
+    # div14 = plot(fig14, output_type='div', include_plotlyjs=False)
     div15 = plot(fig15, output_type='div', include_plotlyjs=False)
     div16 = plot(fig16, output_type='div', include_plotlyjs=False)
     
@@ -260,8 +260,8 @@ def stock_display(request):
         'bollinger_bands1': div11,
         'bollinger_bands2' :div12,
 
-        'arima_pred1': div13,
-        'arima_pred2': div14,
+        # 'arima_pred1': div13,
+        # 'arima_pred2': div14,
 
         'lstm_pred1': div15,
         'lstm_pred2': div16,
