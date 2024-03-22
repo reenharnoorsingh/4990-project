@@ -163,6 +163,45 @@
                     </div>
                     <p>Description of graph</p>
                 </div>
+                <!-- ARIMA Prediction for Stock 1 -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>ARIMA Prediction - {{ stock1 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 600px;">
+                        <div>{{ arima_pred1|safe }}</div>
+                    </div>
+                </div>
+                <!-- ARIMA Prediction for Stock 2 -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>ARIMA Prediction - {{ stock2 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 600px;">
+                        <div>{{ arima_pred2|safe }}</div>
+                    </div>
+                </div>
+
+                <!-- LSTM Prediction for Stock 1 -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>LSTM Prediction - {{ stock1 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 600px;">
+                        <div>{{ lstm_pred1|safe }}</div>
+                    </div>
+                </div>
+
+                <!-- LSTM Prediction for Stock 2 -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>LSTM Prediction - {{ stock2 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 600px;">
+                        <div>{{ lstm_pred2|safe }}</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
