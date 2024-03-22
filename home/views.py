@@ -5,7 +5,7 @@ from django.http import HttpResponse
 import pandas as pd
 import plotly.graph_objs as go
 from plotly.offline import plot
-
+from predictions import fit_arima_model, scale_data, create_lstm_dataset, create_lstm_model, train_lstm_model, predict_lstm  # Import prediction functions
 from backend2 import (
     fetch_data,
     calculate_sma,
@@ -105,6 +105,26 @@ def stock_display(request):
     upper_band_2, lower_band_2 = calculate_bollinger_bands(data2, 20)
     middle_band_2 = calculate_sma(data2, 20)
     
+    # Fit and predict using ARIMA
+    arima_model1 = fit_arima_model(data1['Close'])
+    arima_pred1 = arima_model1.predict(start=len(data1), end=len(data1) + 30)  # Predict the next 30 days
+
+    arima_model2 = fit_arima_model(data2['Close'])
+    arima_pred2 = arima_model2.predict(start=len(data2), end=len(data2) + 30)
+
+    # Prepare data for LSTM
+    scaler1, scaled_data1 = scale_data(data1['Close'])
+    X1, _ = create_lstm_dataset(scaled_data1)
+    lstm_model1 = create_lstm_model()
+    lstm_model1 = train_lstm_model(lstm_model1, X1, X1[:, -1])
+    lstm_pred1 = predict_lstm(lstm_model1, X1, scaler1)
+
+    scaler2, scaled_data2 = scale_data(data2['Close'])
+    X2, _ = create_lstm_dataset(scaled_data2)
+    lstm_model2 = create_lstm_model()
+    lstm_model2 = train_lstm_model(lstm_model2, X2, X2[:, -1])
+    lstm_pred2 = predict_lstm(lstm_model2, X2, scaler2)
+
 
     # Create Plotly graphs for the fetched data
     
@@ -174,6 +194,29 @@ def stock_display(request):
     fig12.add_trace(go.Scatter(x=data2.index, y=lower_band_2, mode='lines', name='Lower Band'))
     fig12.update_layout(title='Bollinger Bands - ' + stock2, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
     
+    # Create the ARIMA prediction plots
+    fig13 = go.Figure()
+    fig13.add_trace(go.Scatter(x=data1.index, y=data1['Close'], mode='lines', name='Close Price'))
+    fig13.add_trace(go.Scatter(x=arima_pred1.index, y=arima_pred1, mode='lines', name='ARIMA Prediction'))
+    fig13.update_layout(title='ARIMA Prediction - ' + stock1, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
+    
+    fig14 = go.Figure()
+    fig14.add_trace(go.Scatter(x=data2.index, y=data2['Close'], mode='lines', name='Close Price'))
+    fig14.add_trace(go.Scatter(x=arima_pred2.index, y=arima_pred2, mode='lines', name='ARIMA Prediction'))
+    fig14.update_layout(title='ARIMA Prediction - ' + stock2, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
+
+    #create the LSTM prediction plots
+    fig15 = go.Figure()
+    fig15.add_trace(go.Scatter(x=data1.index, y=data1['Close'], mode='lines', name='Close Price'))
+    fig15.add_trace(go.Scatter(x=data1.index[-len(lstm_pred1):], y=lstm_pred1.flatten(), mode='lines', name='LSTM Prediction'))
+    fig15.update_layout(title='LSTM Prediction - ' + stock1, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
+
+    fig16 = go.Figure()
+    fig16.add_trace(go.Scatter(x=data2.index, y=data2['Close'], mode='lines', name='Close Price'))
+    fig16.add_trace(go.Scatter(x=data2.index[-len(lstm_pred2):], y=lstm_pred2.flatten(), mode='lines', name='LSTM Prediction'))
+    fig16.update_layout(title='LSTM Prediction - ' + stock2, xaxis_title='Date', yaxis_title='Price', template='plotly_white')
+
+
     # Convert the figures to HTML div strings
     div1 = plot(fig1, output_type='div', include_plotlyjs=False)
     div2 = plot(fig2, output_type='div', include_plotlyjs=False)
@@ -187,6 +230,10 @@ def stock_display(request):
     div10 = plot(fig10, output_type='div', include_plotlyjs=False)
     div11 = plot(fig11, output_type='div', include_plotlyjs=False)
     div12 = plot(fig12, output_type='div', include_plotlyjs=False)
+    div13 = plot(fig13, output_type='div', include_plotlyjs=False)
+    div14 = plot(fig14, output_type='div', include_plotlyjs=False)
+    div15 = plot(fig15, output_type='div', include_plotlyjs=False)
+    div16 = plot(fig16, output_type='div', include_plotlyjs=False)
     
    
 
@@ -213,6 +260,11 @@ def stock_display(request):
         'bollinger_bands1': div11,
         'bollinger_bands2' :div12,
 
+        'arima_pred1': div13,
+        'arima_pred2': div14,
+
+        'lstm_pred1': div15,
+        'lstm_pred2': div16,
  
     }
  
