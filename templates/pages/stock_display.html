@@ -96,73 +96,148 @@
                             <div>{{ graph2|safe }}</div> 
                         </div>
                     </div>
-                    <p>Description of graph</p>
                 </div>
-
-                <!-- Second Section -->
-                <div class="card card-chart">
-                    <div class="card-header ">
-                        <h4>SMA </h4>
-                    </div>
-                    <div class="card-body" style="height: 600px;"> <!-- Updated height to 600px -->
-                        <div id="chartBig8">
-                            <div>{{sma2|safe}}</div> 
-                        </div>
-                    </div>
-                    <p>Description of graph</p>
+            </div>
+        </div>
+        <<div class="row">
+            <div class="col-12">
+                <div class="text-center">
+                     <p>Description: This row displays the Exponential Moving Averages (EMA) for {{stock1}} and {{stock2}}.</p>
                 </div>
+            </div>
+        </div>
 
-                <!-- Third Section -->
+        <!-- Row 5: MACD 1 and MACD 2 -->
+        <div class="row">
+            <div class="col-6">
+                <!-- Ninth Section: MACD 1 -->
                 <div class="card card-chart">
-                    <div class="card-header ">
-                        <h4>EMA </h4>
-                    </div>
-                    <div class="card-body" style="height: 600px;"> <!-- Updated height to 600px -->
+                    <div class="card-body">
                         <div id="chartBig9">
-                            <div>{{ema2|safe}}</div> 
+                            <div>{{ macd1|safe }}</div> 
                         </div>
                     </div>
-                    <p>Description of graph</p>
                 </div>
+            </div>
 
-                <!-- Fourth Section -->
+            <div class="col-6">
+                <!-- Tenth Section: MACD 2 -->
                 <div class="card card-chart">
-                    <div class="card-header">
-                        <h4>RSI</h4>
-                    </div>
-                    <div class="card-body" style="height: 600px;"> <!-- Updated height to 600px -->
+                    <div class="card-body">
                         <div id="chartBig10">
-                            <div>{{ rsi2|safe }}</div> 
-                        </div>
-                    </div>
-                    <p>Description of graph</p>
-                </div>
-
-                <!-- Fifth Section -->
-                <div class="card card-chart">
-                    <div class="card-header ">
-                        <h4> MACD </h4>
-                    </div>
-                    <div class="card-body" style="height: 600px;"> <!-- Updated height to 600px -->
-                        <div id="chartBig11">
                             <div>{{ macd2|safe }}</div> 
                         </div>
                     </div>
                     <p>Description of graph</p>
                 </div>
 
-                <!-- Sixth Section -->
+        <!-- Row 6: Bollinger Bands 1 and Bollinger Bands 2 -->
+        <div class="row">
+            <div class="col-6">
+                <!-- Eleventh Section: Bollinger Bands 1 -->
                 <div class="card card-chart">
-                    <div class="card-header ">
-                        <h4>Bollinger Bands </h4>
-                    </div>
-                    <div class="card-body" style="height: 600px;"> <!-- Updated height to 600px -->
-                        <div id="chartBig12">
-                            <div>{{ bollinger_bands2|safe }}</div> 
+                    <div class="card-body">
+                        <div id="chartBig11">
+                            <div>{{bollinger_bands1|safe}}</div> 
                         </div>
                     </div>
-                    <p>Description of graph</p>
                 </div>
+                <!-- ARIMA Prediction for Stock 1 -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>ARIMA Prediction - {{ stock1 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 600px;">
+                        <div>{{ arima_pred1|safe }}</div>
+                    </div>
+                </div>
+                <!-- ARIMA Prediction for Stock 2 -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>ARIMA Prediction - {{ stock2 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 600px;">
+                        <div>{{ arima_pred2|safe }}</div>
+                    </div>
+                </div>
+
+                <!-- LSTM Prediction for Stock 1 -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>LSTM Prediction - {{ stock1 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 600px;">
+                        <div>{{ lstm_pred1|safe }}</div>
+                    </div>
+                </div>
+
+                <!-- LSTM Prediction for Stock 2 -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>LSTM Prediction - {{ stock2 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 600px;">
+                        <div>{{ lstm_pred2|safe }}</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-6">
+                <!-- Twelfth Section: Bollinger Bands 2 -->
+                <div class="card card-chart">
+                    <div class="card-body">
+                        <div id="chartBig12">
+                            <div>{{bollinger_bands2|safe}}</div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                         <p>Description: This row displays the Exponential Moving Averages (EMA) for {{stock1}} and {{stock2}}.</p>
+                    </div>
+                </div>
+                <!-- ARIMA Prediction for Stock 1 -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>ARIMA Prediction - {{ stock1 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 600px;">
+                        <div>{{ arima_pred1|safe }}</div>
+                    </div>
+                </div>
+                <!-- ARIMA Prediction for Stock 2 -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>ARIMA Prediction - {{ stock2 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 600px;">
+                        <div>{{ arima_pred2|safe }}</div>
+                    </div>
+                </div>
+
+                <!-- LSTM Prediction for Stock 1 -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>LSTM Prediction - {{ stock1 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 600px;">
+                        <div>{{ lstm_pred1|safe }}</div>
+                    </div>
+                </div>
+
+                <!-- LSTM Prediction for Stock 2 -->
+                <div class="card card-chart">
+                    <div class="card-header">
+                        <h4>LSTM Prediction - {{ stock2 }}</h4>
+                    </div>
+                    <div class="card-body" style="height: 600px;">
+                        <div>{{ lstm_pred2|safe }}</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
