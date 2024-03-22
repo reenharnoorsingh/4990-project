@@ -2,12 +2,16 @@
 {% load static %}
 {% block content %}
 
+
+
+
+
 <div class="content">
     <div id="mainContent">
         <div class="row">
-            <div class="col-12" style="margin-bottom: 20px;">
+            <div class="col-12" style="margin-bottom: 20px;"> <!-- Added a new div for the description -->
                 <h1>Graph Analysis</h1>
-                <h3 style="text-align: center;">{{stock1}} vs {{stock2}}</h3>
+                <h3 style="text-align: center;">{{stock1}} vs {{stock2}}</h3> 
             </div>
         </div>
         
@@ -18,7 +22,7 @@
                 <div class="card card-chart">
                     <div class="card-body">
                         <div id="chartBig1">
-                            <div>{{ graph1|safe }}</div>
+                            <div>{{ graph1|safe }}</div> 
                         </div>
                     </div>
                 </div>
@@ -29,7 +33,7 @@
                 <div class="card card-chart">
                     <div class="card-body">
                         <div id="chartBig2">
-                            <div>{{ graph2|safe }}</div>
+                            <div>{{ graph2|safe }}</div> 
                         </div>
                     </div>
                 </div>
@@ -61,7 +65,7 @@
                 <div class="card card-chart">
                     <div class="card-body">
                         <div id="chartBig4">
-                            <div>{{sma2|safe}}</div>
+                            <div>{{sma2|safe}}</div> 
                         </div>
                     </div>
                 </div>
@@ -70,7 +74,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="text-center">
-                     <p>Description: This row displays the Simple Moving Averages (SMA) for {{stock1}} and {{stock2}}.</p>
+                     <p>Description: This row displays the Exponential Moving Averages (EMA) for {{stock1}} and {{stock2}}.</p>
                 </div>
             </div>
         </div>
@@ -93,7 +97,7 @@
                 <div class="card card-chart">
                     <div class="card-body">
                         <div id="chartBig6">
-                            <div>{{ema2|safe}}</div>
+                            <div>{{ema2|safe}}</div> 
                         </div>
                     </div>
                 </div>
@@ -114,7 +118,7 @@
                 <div class="card card-chart">
                     <div class="card-body">
                         <div id="chartBig7">
-                            <div>{{rsi1|safe}}</div>
+                            <div>{{rsi1|safe }}</div> 
                         </div>
                     </div>
                 </div>
@@ -125,7 +129,7 @@
                 <div class="card card-chart">
                     <div class="card-body">
                         <div id="chartBig8">
-                            <div>{{rsi2|safe}}</div>
+                            <div>{{rsi2|safe}}</div> 
                         </div>
                     </div>
                 </div>
@@ -134,7 +138,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="text-center">
-                     <p>Description: This row displays the Relative Strength Index (RSI) for {{stock1}} and {{stock2}}.</p>
+                     <p>Description: This row displays the Exponential Moving Averages (EMA) for {{stock1}} and {{stock2}}.</p>
                 </div>
             </div>
         </div>
@@ -146,7 +150,7 @@
                 <div class="card card-chart">
                     <div class="card-body">
                         <div id="chartBig9">
-                            <div>{{macd1|safe}}</div>
+                            <div>{{ macd1|safe }}</div> 
                         </div>
                     </div>
                 </div>
@@ -157,7 +161,7 @@
                 <div class="card card-chart">
                     <div class="card-body">
                         <div id="chartBig10">
-                            <div>{{macd2|safe}}</div>
+                            <div>{{ macd2|safe }}</div> 
                         </div>
                     </div>
                 </div>
@@ -166,7 +170,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="text-center">
-                     <p>Description: This row displays the Moving Average Convergence Divergence (MACD) for {{stock1}} and {{stock2}}.</p>
+                     <p>Description: This row displays the Exponential Moving Averages (EMA) for {{stock1}} and {{stock2}}.</p>
                 </div>
             </div>
         </div>
@@ -178,7 +182,7 @@
                 <div class="card card-chart">
                     <div class="card-body">
                         <div id="chartBig11">
-                            <div>{{bollinger_bands1|safe}}</div>
+                            <div>{{bollinger_bands1|safe}}</div> 
                         </div>
                     </div>
                 </div>
@@ -189,17 +193,15 @@
                 <div class="card card-chart">
                     <div class="card-body">
                         <div id="chartBig12">
-                            <div>{{bollinger_bands2|safe}}</div>
+                            <div>{{bollinger_bands2|safe}}</div> 
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="text-center">
-                     <p>Description: This row displays the Bollinger Bands for {{stock1}} and {{stock2}}.</p
-
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                         <p>Description: This row displays the Exponential Moving Averages (EMA) for {{stock1}} and {{stock2}}.</p>
                     </div>
                 </div>
             </div>
