@@ -8,7 +8,7 @@
             <form class="mb-4" action="{% url 'graph_display' %}" method="get">
                 <div class="form-group row justify-content-center">
                     <div class="col-md-4">
-                        <select class="form-control form-control-lg rounded-pill text-black custom-bg" name="stock1" id="stock1"> <!-- Added custom class 'custom-bg' -->
+                        <select class="form-control form-control-lg rounded-pill text-white bg-dark" name="stock1" id="stock1"> <!-- Added custom class 'custom-bg' -->
                             <option value="" selected disabled style="display: none;">Select Stock 1</option>
                             {% for ticker, name in tickers_data.items %}
                             <option value="{{ ticker }}">{{ name }}</option>
@@ -16,7 +16,7 @@
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <select class="form-control form-control-lg rounded-pill text-black custom-bg" name="stock2" id="stock2"> <!-- Added custom class 'custom-bg' -->
+                        <select class="form-control form-control-lg rounded-pill text-white bg-dark" name="stock2" id="stock2"> <!-- Added custom class 'custom-bg' -->
                             <option value="" selected disabled style="display: none;">Select Stock 2</option>
                             {% for ticker, name in tickers_data.items %}
                             <option value="{{ ticker }}">{{ name }}</option>
