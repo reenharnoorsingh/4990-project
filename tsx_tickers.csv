@@ -8,6 +8,7 @@ ADN.TO,Acadian Timber Corp.
 HDGE.TO,Accelerate Absolute Return Fund
 ARB.TO,Accelerate Arbitrage Fund
 ATSX.TO,Accelerate Canadian Long Short Equity Fund
+INCM.TO,Accelerate Diversified Credit Income Fund
 ONEC.TO,Accelerate OneChoice Alternative Portfolio ETF
 ACD.TO,Accord Financial Corp.
 ARA.TO,Aclara Resources Inc.
@@ -47,7 +48,6 @@ USA.TO,Americas Gold and Silver Corporation
 ARG.TO,Amerigo Resources Ltd.
 ANRG.TO,Anaergia Inc.
 AND.TO,Andlauer Healthcare Group Inc.
-ATE.TO,Antibe Therapeutics Inc.
 APLI.TO,Appili Therapeutics Inc.
 APS.TO,Aptose Biosciences Inc.
 ARX.TO,ARC Resources Ltd.
@@ -121,7 +121,6 @@ PRM.TO,Big Pharma Split Corp.
 BR.TO,Big Rock Brewery Inc.
 BIR.TO,Birchcliff Energy Ltd.
 BDT.TO,Bird Construction Inc.
-EBIT.TO,Bitcoin ETF
 QBTC.TO,"Bitcoin Fund, The"
 BITF.TO,Bitfarms Ltd.
 BDI.TO,Black Diamond Group Limited
@@ -354,13 +353,13 @@ CBAL.TO,CI Balanced Asset Allocation ETF
 CBGR.TO,CI Balanced Growth Asset Allocation ETF
 CBIN.TO,CI Balanced Income Asset Allocation ETF
 CDNA.TO,CI Bio-Revolution Index ETF
+CAGG.TO,CI Canadian Aggregate Bond Index ETF
 CIC.TO,CI Canadian Banks Covered Call Income Class ETF
 CXF.TO,CI Canadian Convertible Bond ETF
 RIT.TO,CI Canadian REIT ETF
+CAGS.TO,CI Canadian Short-Term Aggregate Bond Index ETF
 CCNV.TO,CI Conservative Asset Allocation ETF
 CBUG.TO,CI Digital Security Index ETF
-CCOR.TO,CI DoubleLine Core Plus Fixed Income US$ Fund
-CINC.TO,CI DoubleLine Income US$ Fund
 CDLB.TO,CI DoubleLine Total Return Bond US$ Fund
 CIEM.TO,CI Emerging Markets Alpha ETF
 NXF.TO,CI Energy Giants Covered Call ETF
@@ -372,6 +371,7 @@ CFRT.TO,CI Floating Rate Income Fund
 CBCX.TO,CI Galaxy Blockchain Index ETF
 CMVX.TO,CI Galaxy Metaverse Index ETF
 CINV.TO,CI Global Alpha Innovation ETF
+CIAI.TO,CI Global Artificial Intelligence ETF
 CGAA.TO,CI Global Asset Allocation Private Pool
 CLML.TO,CI Global Climate Leaders Fund
 FSF.TO,CI Global Financial Sector ETF
@@ -398,9 +398,6 @@ FXM.TO,CI Morningstar Canada Value Index ETF
 ZXM.TO,CI Morningstar International Momentum Index ETF
 VXM.TO,CI Morningstar International Value Index ETF
 QXM.TO,CI Morningstar National Bank Québec Index ETF
-YXM.TO,CI Morningstar US Momentum Index ETF
-XXM.TO,CI Morningstar US Value Index ETF
-FQC.TO,CI MSCI Canada Quality Index Class ETF
 CMAG.TO,CI Munro Alternative Global Growth Fund
 CMGG.TO,CI Munro Global Growth Equity Fund
 ONEQ.TO,CI ONE Global Equity ETF
@@ -412,18 +409,13 @@ FLI.TO,CI U.S. & Canada Lifeco Covered Call ETF
 CMOM.TO,CI U.S. Enhanced Momentum Index ETF
 CVLU.TO,CI U.S. Enhanced Value Index ETF
 CUDV.TO,CI U.S. Minimum Downside Volatility Index ETF
-SID.TO,CI U.S. Trendleaders Index ETF
 CUTL.TO,CI Utilities Giants Covered Call ETF
 DGRC.TO,CI WisdomTree Canada Quality Dividend Growth Index ETF
 EHE.TO,CI WisdomTree Europe Hedged Equity Index ETF
 IQD.TO,CI WisdomTree International Quality Dividend Growth Index ETF
-DQI.TO,CI WisdomTree International Quality Dividend Growth Variably Hedged Index ETF
 JAPN.TO,CI WisdomTree Japan Equity Index ETF
 UMI.TO,CI WisdomTree U.S. MidCap Dividend Index ETF
 DGR.TO,CI WisdomTree U.S. Quality Dividend Growth Index ETF
-DQD.TO,CI WisdomTree U.S. Quality Dividend Growth Variably Hedged Index ETF
-CAGG.TO,CI Yield Enhanced Canada Aggregate Bond Index ETF
-CAGS.TO,CI Yield Enhanced Canada Short-Term Aggregate Bond Index ETF
 CACB.TO,CIBC Active Investment Grade Corporate Bond ETF
 CAFR.TO,CIBC Active Investment Grade Floating Rate Bond ETF
 CCBI.TO,CIBC Canadian Bond Index ETF
@@ -459,7 +451,6 @@ CSU.TO,Constellation Software Inc.
 CTS.TO,Converge Technology Solutions Corp.
 CPLF.TO,Copperleaf Technologies Inc.
 CVO.TO,Coveo Solutions Inc.
-CPG.TO,Crescent Point Energy Corp.
 CTX.TO,Crescita Therapeutics Inc.
 CR.TO,Crew Energy Inc.
 CRON.TO,Cronos Group Inc.
@@ -480,9 +471,13 @@ DCC.TO,Desjardins 1-5 year Laddered Canadian Corporate Bond Index ETF
 DCG.TO,Desjardins 1-5 year Laddered Canadian Government Bond Index ETF
 DANC.TO,Desjardins Alt Long/Short Equity Market Neutral ETF
 DAMG.TO,Desjardins Alt Long/Short Global Equity Markets ETF
+DMEU.TO,Desjardins American Equity Index ETF
+DCBC.TO,Desjardins Canadian Corporate Bond Index ETF
+DMEC.TO,Desjardins Canadian Equity Index ETF
 DCP.TO,Desjardins Canadian Preferred Share Index ETF
 DCS.TO,Desjardins Canadian Short Term Bond Index ETF
 DCU.TO,Desjardins Canadian Universe Bond Index ETF
+DMEI.TO,Desjardins International Equity Index ETF
 DRCU.TO,Desjardins RI Active Canadian Bond - Net-Zero Emissions Pathway ETF
 DRMC.TO,Desjardins RI Canada - Net-Zero Emissions Pathway ETF
 DRFC.TO,Desjardins RI Canada Multifactor - Net-Zero Emissions Pathway ETF
@@ -492,7 +487,7 @@ DRFE.TO,Desjardins RI Emerging Markets Multifactor - Net-Zero Emissions Pathway 
 DRFG.TO,Desjardins RI Global Multifactor - Fossil Fuel Reserves Free ETF
 DRMU.TO,Desjardins RI USA - Net-Zero Emissions Pathway ETF
 DRFU.TO,Desjardins RI USA Multifactor - Net-Zero Emissions Pathway ETF
-DSAE.TO,Desjardins SocieTerra American Equity ETF
+DSAE.TO,Desjardins Sustainable American Equity ETF
 DRFD.TO,DesjardinsRIDeveloped ex-USAex-Canada Multifactor-Net-ZeroEmissionsPathwayETF
 DXT.TO,Dexterra Group Inc.
 DRT.TO,DIRTT Environmental Solutions Ltd.
@@ -561,31 +556,33 @@ EQB.TO,EQB Inc.
 EQX.TO,Equinox Gold Corp.
 ERD.TO,Erdene Resource Development Corporation
 ERO.TO,Ero Copper Corp.
-ETHR.TO,Ether ETF
 EPRX.TO,Eupraxia Pharmaceuticals Inc.
 ESM.TO,Euro Sun Mining Inc.
 ET.TO,Evertz Technologies Limited
 DIVS.TO,Evolve Active Canadian Preferred Share Fund
 EARN.TO,Evolve Active Global Fixed Income Fund
+ARTI.TO,Evolve Artificial Intelligence Fund
 CARS.TO,Evolve Automobile Innovation Index Fund
+EBIT.TO,Evolve Bitcoin ETF
 BANK.TO,Evolve Canadian Banks and Lifecos Enhanced Yield Index Fund
 DATA.TO,Evolve Cloud Computing Index Fund
 ETC.TO,Evolve Cryptocurrencies ETF
 CYBR.TO,Evolve Cyber Security Index Fund
 HERO.TO,Evolve E-Gaming Index ETF
 BOND.TO,Evolve Enhanced Yield Bond Fund
+ETHR.TO,Evolve Ether ETF
 EBNK.TO,Evolve European Banks Enhanced Yield ETF
 TECH.TO,Evolve FANGMA Index ETF
 LEAD.TO,Evolve Future Leadership Fund
 LIFE.TO,Evolve Global Healthcare Enhanced Yield Fund
 BASE.TO,Evolve Global Materials & Mining Enhanced Yield Index ETF
 EDGE.TO,Evolve Innovation Index Fund
-MESH.TO,Evolve Metaverse ETF
 QQQY.TO,Evolve NASDAQ Technology Enhanced Yield Index Fund
 QQQT.TO,Evolve NASDAQ Technology Index Fund
 ESPX.TO,Evolve S&P 500® Enhanced Yield Fund
 ETSX.TO,Evolve S&P/TSX 60 Enhanced Yield Fund
 CALL.TO,Evolve US Banks Enhanced Yield Fund
+EVO.TO,Evovest Global Equity ETF
 EXN.TO,Excellon Resources Inc.
 MIN.TO,Excelsior Mining Corp.
 EIF.TO,Exchange Income Corporation
@@ -596,36 +593,23 @@ EXE.TO,Extendicare Inc.
 FFH.TO,Fairfax Financial Holdings Limited
 FANS.TO,FansUnite Entertainment Inc.
 FDY.TO,Faraday Copper Corp.
-FDGE.TO,Farmers Edge Inc.
 FRX.TO,Fennec Pharmaceuticals Inc.
 FBTC.TO,Fidelity Advantage Bitcoin ETF
 FETH.TO,Fidelity Advantage Ether ETF
 FCCD.TO,Fidelity Canadian High Dividend ETF
 FCCQ.TO,Fidelity Canadian High Quality ETF
-FCCL.TO,Fidelity Canadian Low Volatility ETF
-FCCM.TO,Fidelity Canadian Momentum ETF
 FCMI.TO,Fidelity Canadian Monthly High Income ETF
-FCSB.TO,Fidelity Canadian Short Term Corporate Bond ETF
 FCCV.TO,Fidelity Canadian Value ETF
-FCGB.TO,Fidelity Global Core Plus Bond ETF
-FCIG.TO,Fidelity Global Investment Grade Bond ETF
 FCGI.TO,Fidelity Global Monthly High Income ETF
 FCID.TO,Fidelity International High Dividend ETF
 FCIQ.TO,Fidelity International High Quality ETF
-FCIL.TO,Fidelity International Low Volatility ETF
-FCIM.TO,Fidelity International Momentum ETF
 FCIV.TO,Fidelity International Value ETF
-FCCB.TO,Fidelity Systematic Canadian Bond Index ETF
 FCRH.TO,Fidelity U.S. Dividend for Rising Rates Currency Neutral ETF
 FCRR.TO,Fidelity U.S. Dividend for Rising Rates ETF
 FCUH.TO,Fidelity U.S. High Dividend Currency Neutral ETF
 FCUD.TO,Fidelity U.S. High Dividend ETF
 FCQH.TO,Fidelity U.S. High Quality Currency Neutral ETF
 FCUQ.TO,Fidelity U.S. High Quality ETF
-FCLH.TO,Fidelity U.S. Low Volatility Currency Neutral ETF
-FCUL.TO,Fidelity U.S. Low Volatility ETF
-FCMH.TO,Fidelity U.S. Momentum Currency Neutral ETF
-FCMO.TO,Fidelity U.S. Momentum ETF
 FCVH.TO,Fidelity U.S. Value Currency Neutral ETF
 FCUV.TO,Fidelity U.S. Value ETF
 FSZ.TO,Fiera Capital Corporation
@@ -669,11 +653,12 @@ FTS.TO,Fortis Inc.
 FVI.TO,Fortuna Silver Mines Inc.
 FT.TO,Fortune Minerals Limited
 FNV.TO,Franco-Nevada Corporation
-FLCP.TO,Franklin Bissett Core Plus Bond Fund
-FLCI.TO,Franklin Bissett Corporate Bond Fund
-FLSD.TO,Franklin Bissett Short Duration Bond Fund
-FHIS.TO,Franklin Bissett Ultra Short Bond Fund
 FBGO.TO,Franklin Brandywine Global Sustainable Income Optimiser Fund
+FLCP.TO,Franklin Canadian Core Plus Bond Fund
+FLCI.TO,Franklin Canadian Corporate Bond Fund
+FGOV.TO,Franklin Canadian Government Bond Fund
+FLSD.TO,Franklin Canadian Short Term Bond Fund
+FHIS.TO,Franklin Canadian Ultra Short Term Bond Fund
 FCII.TO,Franklin ClearBridge Sustainable Global Infrastructure Income Fund
 FCSI.TO,Franklin ClearBridge Sustainable International Growth Fund
 FLGA.TO,Franklin Global Core Bond Fund
@@ -688,6 +673,7 @@ FRU.TO,Freehold Royalties Ltd.
 FEC.TO,Frontera Energy Corporation
 FURY.TO,Fury Gold Mines Limited
 GMIN.TO,G Mining Ventures Corp.
+GTWO.TO,G2 Goldfields Inc.
 GLXY.TO,Galaxy Digital Holdings Ltd.
 GAU.TO,Galiano Gold Inc.
 GH.TO,Gamehost Inc.
@@ -708,6 +694,88 @@ GLG.TO,GLG Life Tech Corporation
 GLO.TO,Global Atomic Corporation
 GDV.TO,Global Dividend Growth Split Corp.
 GEC.TO,Global Education Communities Corp.
+CBIL.TO,Global X 0-3 Month T-Bill ETF
+HAD.TO,Global X Active Canadian Bond ETF
+HAL.TO,Global X Active Canadian Dividend ETF
+HMP.TO,Global X Active Canadian Municipal Bond ETF
+HAB.TO,Global X Active Corporate Bond ETF
+HAZ.TO,Global X Active Global Dividend ETF
+HAF.TO,Global X Active Global Fixed Income ETF
+HYBR.TO,Global X Active Hybrid Bond and Preferred Share ETF
+HPR.TO,Global X Active Preferred Share ETF
+HFR.TO,Global X Active Ultra-Short Term Investment Grade Bond ETF
+HEQT.TO,Global X All-Equity Asset Allocation ETF
+AIGO.TO,Global X Artificial Intelligence & Technology Index ETF
+HBAL.TO,Global X Balanced Asset Allocation ETF
+HBGD.TO,Global X Big Data & Hardware Index ETF
+HXH.TO,Global X Canadian High Dividend Index Corporate Class ETF
+ENCC.TO,Global X Canadian Oil and Gas Equity Covered Call ETF
+HBB.TO,Global X Canadian Select Universe Bond Index Corporate Class ETF
+UTIL.TO,Global X Canadian Utility Services High Dividend Index ETF
+CARB.TO,Global X Carbon Credits ETF
+HSAV.TO,Global X Cash Maximizer Corporate Class ETF
+HCON.TO,Global X Conservative Asset Allocation ETF
+COPP.TO,Global X Copper Producers Index ETF
+HUC.TO,Global X Crude Oil ETF
+HBUG.TO,Global X Cybersecurity Index ETF
+HXEM.TO,Global X Emerging Markets Equity Index Corporate Class ETF
+EQCL.TO,Global X Enhanced All-Equity Asset Allocation Covered Call ETF
+HEQL.TO,Global X Enhanced All-Equity Asset Allocation ETF
+ENCL.TO,Global X Enhanced Canadian Oil and Gas Equity Covered Call ETF
+BNKL.TO,Global X Enhanced Equal Weight Banks Index ETF
+BKCL.TO,Global X Enhanced Equal Weight Canadian Banks Covered Call ETF
+QQCL.TO,Global X Enhanced Nasdaq-100 Covered Call ETF
+USCL.TO,Global X Enhanced S&P 500 Covered Call ETF
+CNCL.TO,Global X Enhanced S&P/TSX 60 Covered Call ETF
+CANL.TO,Global X Enhanced S&P/TSX 60 Index ETF
+BKCC.TO,Global X Equal Weight Canadian Bank Covered Call ETF
+HEWB.TO,Global X Equal Weight Canadian Banks Index Corporate Class ETF
+HBNK.TO,Global X Equal Weight Canadian Banks Index ETF
+HCRE.TO,Global X Equal Weight Canadian REITs Index Corporate Class ETF
+HXX.TO,Global X Europe 50 Index Corporate Class ETF
+ETHI.TO,Global X Global Sustainability Leaders Index ETF
+HUG.TO,Global X Gold ETF
+GLCC.TO,Global X Gold Producer Equity Covered Call ETF
+HGY.TO,Global X Gold Yield ETF
+GRCC.TO,Global X Growth Asset Allocation Covered Call ETF
+HGRW.TO,Global X Growth Asset Allocation ETF
+CASH.TO,Global X High Interest Savings ETF
+FOUR.TO,Global X Industry 4.0 Index ETF
+TTTX.TO,Global X Innovative Bluechip Top 10 Index ETF
+INOC.TO,Global X Inovestor Canadian Equity Index ETF
+HXDM.TO,Global X Intl Developed Markets Equity Index Corporate Class ETF
+HLPR.TO,Global X Laddered Canadian Preferred Share Index Corporate Class ETF
+HLIT.TO,Global X Lithium Producers Index ETF
+LPAY.TO,Global X Long-Term U.S. Treasury Premium Yield ETF
+HMMJ.TO,Global X Marijuana Life Sciences Index ETF
+MTAV.TO,Global X Metaverse Index ETF
+MPAY.TO,Global X Mid-Term U.S. Treasury Premium Yield ETF
+QQCC.TO,Global X Nasdaq-100 Covered Call ETF
+HXQ.TO,Global X Nasdaq-100 Index Corporate Class ETF
+QQQX.TO,Global X Nasdaq-100 Index ETF
+HUN.TO,Global X Natural Gas ETF
+PPLN.TO,Global X Pipelines & Energy Services Index ETF
+HRAA.TO,Global X ReSolve Adaptive Asset Allocation Corporate Class ETF
+RBOT.TO,Global X Robotics & AI Index ETF
+HSH.TO,Global X S&P 500 CAD Hedged Index Corporate Class ETF
+USCC.TO,Global X S&P 500 Covered Call ETF
+HXS.TO,Global X S&P 500 Index Corporate Class ETF
+USSX.TO,Global X S&P 500 Index ETF
+HGGB.TO,Global X S&P Green Bond Index ETF
+CNCC.TO,Global X S&P/TSX  60 Covered Call ETF
+HXT.TO,Global X S&P/TSX 60 Index Corporate Class ETF
+CNDX.TO,Global X S&P/TSX 60 Index ETF
+HXCN.TO,Global X S&P/TSX Capped Composite Index Corporate Class ETF
+HXE.TO,Global X S&P/TSX Capped Energy Index Corporate Class ETF
+HXF.TO,Global X S&P/TSX Capped Financials Index Corporate Class ETF
+HAC.TO,Global X Seasonal Rotation ETF
+CHPS.TO,Global X Semiconductor Index ETF
+SPAY.TO,Global X Short-Term U.S. Treasury Premium Yield ETF
+HUZ.TO,Global X Silver ETF
+HURA.TO,Global X Uranium Index ETF
+HTB.TO,Global X US 7-10 Year Treasury Bond Index Corporate Class ETF
+DLR.TO,Global X US Dollar Currency ETF
+HULC.TO,Global X US Large Cap Index Corporate Class ETF
 GMX.TO,Globex Mining Enterprises Inc.
 GSY.TO,goeasy Ltd.
 GGD.TO,GoGold Resources Inc.
@@ -732,6 +800,7 @@ GDPY.TO,Guardian Directed Premium Yield Portfolio
 GIQG.TO,Guardian i3 Global Quality Growth ETF
 GIQU.TO,Guardian i3 US Quality Growth ETF
 GIES.TO,Guardian International Equity Select Fund
+GIGC.TO,Guardian Investment Grade Corporate Bond Fund
 GCTB.TO,Guardian Ultra-Short Canadian T-Bill Fund
 GPMD.TO,GuardPath TM Managed Decumulation 2042 Fund
 GURU.TO,GURU Organic Energy Corp.
@@ -754,8 +823,10 @@ HTL.TO,Hamilton Thorne Ltd.
 HBND.TO,Hamilton U.S. Bond Yield Maximizer ETF
 SMAX.TO,Hamilton U.S. Equity Yield Maximizer ETF
 FMAX.TO,Hamilton U.S. Financials Yield Maximizer ETF
-HUM.TO,Hamilton U.S. Mid/Small-Cap Financials ETF
+HUM.TO,Hamilton U.S. Mid-Cap Financials ETF
 UMAX.TO,Hamilton Utilities Yield Maximizer ETF
+HBIE.TO,Harvest Balanced Income & Growth Enhanced ETF
+HBIG.TO,Harvest Balanced Income & Growth ETF
 HBFE.TO,Harvest Brand Leaders Enhanced Income ETF
 HBF.TO,Harvest Brand Leaders Plus Income ETF
 HLFE.TO,Harvest Canadian Equity Enhanced Income Leaders ETF
@@ -771,6 +842,7 @@ HGGG.TO,Harvest Global Gold Giants Index ETF
 HGR.TO,Harvest Global REIT Leaders Income ETF
 HHLE.TO,Harvest Healthcare Leaders Enhanced Income ETF
 HHL.TO,Harvest Healthcare Leaders Income ETF
+HIND.TO,Harvest Industrial Leaders Income ETF
 HPYM.TO,Harvest Premium Yield 7-10 Year Treasury ETF
 HPYT.TO,Harvest Premium Yield Treasury ETF
 HTAE.TO,Harvest Tech Achievers Enhanced Income ETF
@@ -785,90 +857,6 @@ HRX.TO,Heroux-Devtek Inc.
 HWO.TO,High Arctic Energy Services Inc.
 HLF.TO,High Liner Foods Incorporated
 HLS.TO,HLS Therapeutics Inc.
-CBIL.TO,Horizons 0-3 Month T-Bill ETF
-HARC.TO,Horizons Absolute Return Global Currency ETF
-HAD.TO,Horizons Active Cdn Bond ETF
-HAL.TO,Horizons Active Cdn Dividend ETF
-HMP.TO,Horizons Active Cdn Municipal Bond ETF
-HAB.TO,Horizons Active Corporate Bond ETF
-HSL.TO,Horizons Active Floating Rate Senior Loan ETF
-HAZ.TO,Horizons Active Global Dividend ETF
-HAF.TO,Horizons Active Global Fixed Income ETF
-HYI.TO,Horizons Active High Yield Bond ETF
-HYBR.TO,Horizons Active Hybrid Bond and Preferred Share ETF
-HPR.TO,Horizons Active Preferred Share ETF
-HFR.TO,Horizons Active Ultra-Short Term Investment Grade Bond ETF
-HUF.TO,Horizons Active Ultra-Short Term US Investment Grade Bond ETF
-HEQT.TO,Horizons All-Equity Asset Allocation ETF
-HBAL.TO,Horizons Balanced Asset Allocation ETF
-HBGD.TO,Horizons Big Data & Hardware Index ETF
-CNCC.TO,Horizons Canadian Large Cap Equity Covered Call ETF
-ENCC.TO,Horizons Canadian Oil and Gas Equity Covered Call ETF
-UTIL.TO,Horizons Canadian Utility Services High Dividend Index ETF
-CARB.TO,Horizons Carbon Credits ETF
-HSAV.TO,Horizons Cash Maximizer ETF
-HXH.TO,Horizons Cdn High Dividend Index ETF
-HBB.TO,Horizons Cdn Select Universe Bond ETF
-HCON.TO,Horizons Conservative Asset Allocation ETF
-COPP.TO,Horizons Copper Producers Index ETF
-HUC.TO,Horizons Crude Oil ETF
-HXEM.TO,Horizons Emerging Markets Equity Index ETF
-EQCL.TO,Horizons Enhanced All-Equity Asset Allocation Covered Call ETF
-HEQL.TO,Horizons Enhanced All-Equity Asset Allocation ETF
-CNCL.TO,Horizons Enhanced Canadian Large Cap Equity Covered Call ETF
-ENCL.TO,Horizons Enhanced Canadian Oil and Gas Equity Covered Call ETF
-BNKL.TO,Horizons Enhanced Equal Weight Banks Index ETF
-BKCL.TO,Horizons Enhanced Equal Weight Canadian Banks Covered Call ETF
-QQCL.TO,Horizons Enhanced NASDAQ-100 Covered Call ETF
-CANL.TO,Horizons Enhanced S&P/TSX 60 Index ETF
-USCL.TO,Horizons Enhanced US Large Cap Equity Covered Call ETF
-HBNK.TO,Horizons Equal Weight Banks Index ETF
-HEWB.TO,Horizons Equal Weight Canada Banks Index ETF
-HCRE.TO,Horizons Equal Weight Canada REIT Index ETF
-BKCC.TO,Horizons Equal Weight Canadian Bank Covered Call ETF
-HXX.TO,Horizons Europe 50 Index ETF
-BBIG.TO,Horizons Global BBIG Technology ETF
-HYDR.TO,Horizons Global Hydrogen Index ETF
-HLIT.TO,Horizons Global Lithium Producers Index ETF
-MTAV.TO,Horizons Global Metaverse Index ETF
-CHPS.TO,Horizons Global Semiconductor Index ETF
-ETHI.TO,Horizons Global Sustainability Leaders Index ETF
-HURA.TO,Horizons Global Uranium Index ETF
-HUG.TO,Horizons Gold ETF
-GLCC.TO,Horizons Gold Producer Equity Covered Call ETF
-HGY.TO,Horizons Gold Yield ETF
-GRCC.TO,Horizons Growth Asset Allocation Covered Call ETF
-HGRW.TO,Horizons Growth Asset Allocation ETF
-HBUG.TO,Horizons GX Cybersecurity Index ETF
-CASH.TO,Horizons High Interest Savings ETF
-FOUR.TO,Horizons Industry 4.0 Index ETF
-INOC.TO,Horizons Inovestor Canadian Equity Index ETF
-HXDM.TO,Horizons Intl Developed Markets Equity Index ETF
-HLPR.TO,Horizons Laddered Canadian Preferred Share Index ETF
-LPAY.TO,Horizons Long-Term U.S. Treasury Premium Yield ETF
-HMMJ.TO,Horizons Marijuana Life Sciences Index ETF
-MPAY.TO,Horizons Mid-Term U.S. Treasury Premium Yield ETF
-QQCC.TO,Horizons NASDAQ-100 Covered Call ETF
-HXQ.TO,Horizons NASDAQ-100 Index ETF
-HUN.TO,Horizons Natural Gas ETF
-HOG.TO,Horizons Pipelines & Energy Services Index ETF
-HRAA.TO,Horizons ReSolve Adaptive Asset Allocation ETF
-RBOT.TO,Horizons Robotics & AI Index ETF
-HSH.TO,Horizons S&P 500 CAD Hedged Index ETF
-HXS.TO,Horizons S&P 500 Index ETF
-HGGB.TO,Horizons S&P Green Bond Index ETF
-HXT.TO,Horizons S&P/TSX 60 Index ETF
-HXCN.TO,Horizons S&P/TSX Capped Composite Index ETF
-HXE.TO,Horizons S&P/TSX Capped Energy Index ETF
-HXF.TO,Horizons S&P/TSX Capped Financials Index ETF
-HAC.TO,Horizons Seasonal Rotation ETF
-SPAY.TO,Horizons Short-Term U.S. Treasury Premium Yield ETF
-HUZ.TO,Horizons Silver ETF
-HARB.TO,Horizons Tactical Absolute Return Bond ETF
-HTB.TO,Horizons US 7-10 Year Treasury Bond ETF
-DLR.TO,Horizons US Dollar Currency ETF
-USCC.TO,Horizons US Large Cap Equity Covered Call ETF
-HULC.TO,Horizons US Large Cap Index ETF
 HZM.TO,Horizonte Minerals Plc.
 HBM.TO,Hudbay Minerals Inc.
 HUT.TO,Hut 8 Corp.
@@ -892,11 +880,11 @@ III.TO,Imperial Metals Corporation
 IMO.TO,Imperial Oil Limited
 IDG.TO,Indigo Books & Music Inc.
 ISV.TO,Information Services Corporation
+IS.TO,Infrastructure Dividend Split Corp.
 INE.TO,Innergex Renewable Energy Inc.
 IPO.TO,InPlay Oil Corp.
 IFC.TO,Intact Financial Corporation
 IGX.TO,IntelGenx Technologies Corp.
-IPCI.TO,IntelliPharmaCeutics International Inc.
 IFP.TO,Interfor Corporation
 IMP.TO,Intermap Technologies Corporation
 IPCO.TO,International Petroleum Corporation
@@ -1145,7 +1133,6 @@ MKC.TO,Mackenzie Maximum Diversification Canada Index ETF
 MEU.TO,Mackenzie Maximum Diversification Developed Europe Index ETF
 MEE.TO,Mackenzie Maximum Diversification Emerging Markets Index ETF
 MUS.TO,Mackenzie Maximum Diversification US Index ETF
-MPCF.TO,Mackenzie Portfolio Completion ETF
 QUB.TO,Mackenzie U.S. Aggregate Bond Index ETF (CAD-Hedged)
 MUB.TO,Mackenzie Unconstrained Bond ETF
 QTLT.TO,Mackenzie US Government Long Bond Index ETF
@@ -1183,10 +1170,9 @@ MXG.TO,Maxim Power Corp.
 MKP.TO,MCAN Mortgage Corporation
 MCB.TO,McCoy Global Inc.
 MUX.TO,McEwen Mining Inc.
-MDA.TO,MDA Ltd.
+MDA.TO,MDA Space Ltd.
 MDF.TO,mdf commerce inc.
 MDP.TO,Medexus Pharmaceuticals Inc.
-MVP.TO,MediaValet Inc.
 DR.TO,Medical Facilities Corporation
 MDNA.TO,Medicenna Therapeutics Corp.
 LABS.TO,MediPharm Labs Corp.
@@ -1231,7 +1217,6 @@ NSCE.TO,NBI Sustainable Canadian Equity ETF
 NSSB.TO,NBI Sustainable Canadian Short Term Bond ETF
 NSGE.TO,NBI Sustainable Global Equity ETF
 NUBF.TO,NBI Unconstrained Fixed Income ETF
-NBLY.TO,Neighbourly Pharmacy Inc.
 NEO.TO,Neo Performance Materials Inc.
 NCU.TO,Nevada Copper Corp.
 NGD.TO,New Gold Inc.
@@ -1243,7 +1228,6 @@ NFI.TO,NFI Group Inc.
 NGEX.TO,NGEx Minerals Ltd.
 NCP.TO,Nickel Creek Platinum Corp.
 TKN.TO,Ninepoint Web3 Innovators Fund
-NB.TO,NioCorp Developments Ltd.
 NOA.TO,North American Construction Group Ltd.
 FFN.TO,North American Financial 15 Split Corp.
 NWC.TO,North West Company Inc. (The)
@@ -1336,7 +1320,6 @@ PRP.TO,Purpose Conservative Income Fund
 PDF.TO,Purpose Core Dividend Fund
 CROP.TO,Purpose Credit Opportunities Fund
 PRA.TO,Purpose Diversified Real Asset Fund
-CLMT.TO,Purpose Energy Transition Fund
 PDIV.TO,Purpose Enhanced Dividend Fund
 PAYF.TO,Purpose Enhanced Premium Yield Fund
 ETHH.TO,Purpose Ether ETF
@@ -1365,7 +1348,7 @@ QEC.TO,Questerre Energy Corporation
 QIPT.TO,Quipt Home Medical Corp.
 RBA.TO,"RB Global, Inc."
 RLB.TO,RBC 1-5 Year Laddered Canadian Bond ETF
-RBO.TO,RBC 1-5 Year Laddered Corporate Bond ETF
+RBO.TO,RBC 1-5 Year Laddered Canadian Corporate Bond ETF
 RBNK.TO,RBC Canadian Bank Yield Index ETF
 RCDC.TO,RBC Canadian Dividend Covered Call ETF
 RPF.TO,RBC Canadian Preferred Share ETF
@@ -1379,18 +1362,26 @@ RPD.TO,RBC Quant European Dividend Leaders ETF
 RUDH.TO,RBC Quant U.S. Dividend Leaders (CAD Hedged) ETF
 RUD.TO,RBC Quant U.S. Dividend Leaders ETF
 RUSB.TO,RBC Short Term U.S. Corporate Bond ETF
-RQL.TO,RBC Target 2024 Corporate Bond Index ETF
-RGQL.TO,RBC Target 2024 Government Bond ETF
-RQN.TO,RBC Target 2025 Corporate Bond Index ETF
-RGQN.TO,RBC Target 2025 Government Bond ETF
-RQO.TO,RBC Target 2026 Corporate Bond Index ETF
-RGQO.TO,RBC Target 2026 Government Bond ETF
-RQP.TO,RBC Target 2027 Corporate Bond Index ETF
-RGQP.TO,RBC Target 2027 Government Bond ETF
-RQQ.TO,RBC Target 2028 Corporate Bond Index ETF
-RGQQ.TO,RBC Target 2028 Government Bond ETF
-RQR.TO,RBC Target 2029 Corporate Bond Index ETF
-RGQR.TO,RBC Target 2029 Government Bond ETF
+RQL.TO,RBC Target 2024 Canadian Corporate Bond Index ETF
+RGQL.TO,RBC Target 2024 Canadian Government Bond ETF
+RQN.TO,RBC Target 2025 Canadian Corporate Bond Index ETF
+RGQN.TO,RBC Target 2025 Canadian Government Bond ETF
+RUQN.TO,RBC Target 2025 U.S. Corporate Bond ETF
+RQO.TO,RBC Target 2026 Canadian Corporate Bond Index ETF
+RGQO.TO,RBC Target 2026 Canadian Government Bond ETF
+RUQO.TO,RBC Target 2026 U.S. Corporate Bond ETF
+RQP.TO,RBC Target 2027 Canadian Corporate Bond Index ETF
+RGQP.TO,RBC Target 2027 Canadian Government Bond ETF
+RUQP.TO,RBC Target 2027 U.S. Corporate Bond ETF
+RQQ.TO,RBC Target 2028 Canadian Corporate Bond Index ETF
+RGQQ.TO,RBC Target 2028 Canadian Government Bond ETF
+RUQQ.TO,RBC Target 2028 U.S. Corporate Bond ETF
+RQR.TO,RBC Target 2029 Canadian Corporate Bond Index ETF
+RGQR.TO,RBC Target 2029 Canadian Government Bond ETF
+RUQR.TO,RBC Target 2029 U.S. Corporate Bond ETF
+RQS.TO,RBC Target 2030 Canadian Corporate Bond Index ETF
+RGQS.TO,RBC Target 2030 Canadian Government Bond ETF
+RUQS.TO,RBC Target 2030 U.S. Corporate Bond ETF
 RUBH.TO,RBC U.S. Banks Yield (CAD Hedged) Index ETF
 RUBY.TO,RBC U.S. Banks Yield Index ETF
 RDBH.TO,RBC U.S. Discount Bond (CAD Hedged) ETF
@@ -1529,6 +1520,9 @@ TULV.TO,TD Q U.S. Low Volatility ETF
 TQSM.TO,TD Q U.S. Small-Mid-Cap Equity ETF
 TCSB.TO,TD Select Short Term Corporate Bond Ladder ETF
 TUSB.TO,TD Select U.S. Short Term Corporate Bond Ladder ETF
+TBCE.TO,TD Target 2025 Investment Grade Bond ETF
+TBCF.TO,TD Target 2026 Investment Grade Bond ETF
+TBCG.TO,TD Target 2027 Investment Grade Bond ETF
 THU.TO,TD U.S. Equity CAD Hedged Index ETF
 TPU.TO,TD U.S. Equity Index ETF
 TULB.TO,TD U.S. Long Term Treasury Bond ETF
@@ -1566,7 +1560,6 @@ TRZ.TO,Transat A.T. Inc.
 TML.TO,Treasury Metals Inc.
 TSL.TO,Tree Island Steel Ltd.
 TCW.TO,Trican Well Service Ltd.
-TCN.TO,Tricon Residential Inc.
 TMQ.TO,Trilogy Metals Inc.
 TFPM.TO,Triple Flag Precious Metals Corp.
 TSU.TO,Trisura Group Ltd.
@@ -1619,6 +1612,7 @@ VUS.TO,Vanguard U.S. Total Market Index ETF (CAD-hedged)
 VCM.TO,Vecima Networks Inc.
 VLN.TO,Velan Inc.
 NPK.TO,Verde Agritech Ltd.
+VRN.TO,Veren Inc.
 VET.TO,Vermilion Energy Inc.
 VBNK.TO,VersaBank
 FORA.TO,VerticalScope Holdings Inc.
